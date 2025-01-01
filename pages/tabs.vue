@@ -1,10 +1,32 @@
+<script lang="ts" setup>
+const { name } = useFamily();
+
+const currentTime = ref("");
+
+onMounted(() => {
+  setInterval(() => {
+    currentTime.value = new Date().toLocaleTimeString();
+  }, 1000);
+});
+</script>
+
 <template>
   <ion-page>
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="primary">
+          <ion-button size="large" class="btn-time">{{ currentTime }}</ion-button>
+        </ion-buttons>
+        <ion-title>{{ name }}</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
     <ion-content>
       <ion-tabs>
+
         <ion-router-outlet />
-        
-        <ion-tab-bar slot="top">
+
+        <ion-tab-bar slot="bottom">
           <ion-tab-button tab="dashboard" href="/tabs/dashboard" disabled>
             <ion-icon :icon="ioniconsHomeOutline" />
             <ion-label>Übersicht</ion-label>
@@ -25,3 +47,9 @@
     </ion-content>
   </ion-page>
 </template>
+
+<style scoped>
+.btn-time {
+  padding-inline: 10px;
+}
+</style>
