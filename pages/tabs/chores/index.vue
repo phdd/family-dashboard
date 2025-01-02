@@ -11,8 +11,8 @@ const { members } = useFamily();
     <ion-content>
       <ion-grid class="h-full">
         <ion-row class="h-full">
-          <ion-col v-for="member in members" :key="member.name">
-            <chore-list :member="member" />
+          <ion-col v-for="(member, index) in members" :key="index">
+            <chore-list :member="member" :color="`member-${index + 1}`" />
           </ion-col>
         </ion-row>
       </ion-grid>

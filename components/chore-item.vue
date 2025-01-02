@@ -1,6 +1,6 @@
 <template>
-  <ion-item :style="{ backgroundColor: color }" lines="none" class="m-3 rounded-xl">
-    <ion-checkbox>
+  <ion-item :style="{ backgroundColor: `rgba(var(--ion-color-${color}-rgb), .3)` }" lines="none" class="m-3 rounded-xl">
+    <ion-checkbox :color="color">
       <ion-label>{{ props.content }}</ion-label>  
     </ion-checkbox>
   </ion-item>
