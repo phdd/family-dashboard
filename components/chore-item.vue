@@ -1,7 +1,8 @@
 <template>
   <ion-item :style="{ backgroundColor: `rgba(var(--ion-color-${color}-rgb), .3)` }" lines="none" class="m-3 rounded-xl">
     <ion-checkbox :color="color">
-      <ion-label>{{ props.content }}</ion-label>  
+      <ion-label>{{ props.content }}</ion-label>
+      <ion-note>Jeden Tag</ion-note>
     </ion-checkbox>
   </ion-item>
 </template>
