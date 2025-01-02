@@ -12,10 +12,10 @@ onMounted(() => {
 
 <template>
   <ion-page>
-    <ion-header>
+    <ion-header class="ion-no-border">
       <ion-toolbar>
         <ion-buttons slot="primary">
-          <ion-button size="large" class="btn-time">{{ currentTime }}</ion-button>
+          <ion-button class="btn-time">{{ currentTime }}</ion-button>
         </ion-buttons>
         <ion-title>{{ name }}</ion-title>
       </ion-toolbar>

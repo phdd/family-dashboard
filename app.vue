@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import '@ionic/vue/css/palettes/dark.always.css';
+// import '@ionic/vue/css/palettes/dark.always.css';
 </script>
 
 <template>
