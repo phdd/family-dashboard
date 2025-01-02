@@ -1,6 +1,8 @@
 <template>
   <ion-item :style="{ backgroundColor: color }" lines="none">
-    <ion-label>{{ props.content }}</ion-label>
+    <ion-checkbox>
+    <ion-label>{{ props.content }}</ion-label>  
+    </ion-checkbox>
   </ion-item>
 </template>
 

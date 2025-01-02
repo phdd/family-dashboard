@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
-  modules: ['@nuxtjs/ionic'],
-  css: ['~/assets/ionic.scss', '~/assets/style.scss'],
+  modules: ['@nuxtjs/ionic', '@nuxtjs/tailwindcss'],
+  css: ['~/assets/ionic.scss'],
   ssr: false
 })

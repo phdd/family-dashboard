@@ -17,7 +17,7 @@ onMounted(() => {
         <ion-buttons slot="primary">
           <ion-button class="btn-time">{{ currentTime }}</ion-button>
         </ion-buttons>
-        <ion-title>{{ name }}</ion-title>
+        <ion-title class="font-serif text-3xl">{{ name }}</ion-title>
       </ion-toolbar>
     </ion-header>
 
