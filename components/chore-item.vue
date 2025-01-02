@@ -1,7 +1,7 @@
 <template>
-  <ion-item :style="{ backgroundColor: color }" lines="none">
+  <ion-item :style="{ backgroundColor: color }" lines="none" class="m-3 rounded-xl">
     <ion-checkbox>
-    <ion-label>{{ props.content }}</ion-label>  
+      <ion-label>{{ props.content }}</ion-label>  
     </ion-checkbox>
   </ion-item>
 </template>
@@ -16,10 +16,5 @@ const props = defineProps<{
 <style>
   ion-item::part(native) {
     background: transparent;
-  }
-
-  ion-item {
-    border-radius: 10px;
-    margin: 10px;
   }
 </style>

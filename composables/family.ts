@@ -1,6 +1,6 @@
 import { colorForString } from '~/utils/colors';
 
-type FamilyMember = {
+export type FamilyMember = {
   name: string;
   avatar: string;
   color: string;
