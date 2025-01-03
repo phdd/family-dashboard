@@ -44,10 +44,11 @@ ion-checkbox {
   --size: 2rem;
   --border-width: 0px;
   --checkmark-width: 4px;
+  --border-radius: 100px;
   
   --checkmark-color: white;
   --border-color: rgba(255, 255, 255, .8);
-  --checkbox-background: transparent;
+  --checkbox-background: white;
   --checkbox-background-checked: transparent;
 }
 </style>
