@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-const { name } = useFamily();
-
 const currentTime = ref("");
 
 onMounted(() => {
@@ -17,7 +15,7 @@ onMounted(() => {
         <ion-buttons slot="primary">
           <ion-button class="pr-2" size="large">{{ currentTime }}</ion-button>
         </ion-buttons>
-        <ion-title class="font-serif text-3xl">{{ name }}</ion-title>
+        <ion-title class="font-serif text-3xl">Familie Heisig</ion-title>
       </ion-toolbar>
     </ion-header>
     

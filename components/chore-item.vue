@@ -1,15 +1,20 @@
 <template>
-  <ion-item :style="{ backgroundColor: `rgba(var(--ion-color-${color}-rgb), .3)` }" lines="none" class="m-3 rounded-xl">
+  <ion-item
+    lines="none" class="m-3 rounded-xl"
+    :style="{ 
+      backgroundColor: `rgba(var(--ion-color-${color}-rgb), .3)`
+    }">
+
     <ion-checkbox :color="color">
-      <ion-label>{{ props.content }}</ion-label>
-      <ion-note>Jeden Tag</ion-note>
+      <ion-label>{{ props.task.content }}</ion-label>
+      <ion-note>{{ props.task.description }}</ion-note>
     </ion-checkbox>
   </ion-item>
 </template>
 
 <script lang="ts" setup>
 const props = defineProps<{
-  content: string;
+  task: Task;
   color: string;
 }>();
 </script>
