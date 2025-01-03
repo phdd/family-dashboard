@@ -18,9 +18,11 @@
       </div>
     </ion-list-header>
 
-    <chore-item v-for="task in tasks" :key="task.id"
-      :color="color"
-      :task="task" />
+    <transition-group name="list" tag="div">
+      <chore-item v-for="task in tasks" :key="task.id"
+        :color="color"
+        :task="task" />
+    </transition-group>
   </ion-list>
 </template>
 
@@ -37,3 +39,16 @@ const showInitials = ref(false);
 const taskDoneRatio = computed(() =>
   props.tasks.filter(task => task.isCompleted).length / props.tasks.length);
 </script>
+
+<style scoped>
+.list-enter-active, .list-leave-active {
+  transition: all 0.2s ease;
+}
+.list-enter-from, .list-leave-to {
+  opacity: 0;
+  transform: translateY(30px);
+}
+.list-move {
+  transition: transform 0.2s ease;
+}
+</style>
