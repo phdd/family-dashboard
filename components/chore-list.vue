@@ -7,10 +7,10 @@
           {{ collaborator.name.charAt(0) }}
         </div>
       </ion-avatar>
-      <div class="flex flex-col w-full pr-5 gap-2">
+      <div class="flex flex-col w-full pr-3 gap-2">
         <div class="flex justify-between font-serif text-2xl">
           <span>{{ collaborator.name }}</span>
-          <span class="text-gray-500">
+          <span class="text-gray-500 pr-3">
             {{ tasks.filter(task => task.isCompleted).length }}/{{ tasks.length }}
           </span>
         </div>

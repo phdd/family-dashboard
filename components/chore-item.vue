@@ -39,9 +39,14 @@ ion-item::part(native) {
 
 ion-checkbox {
   --size: 2rem;
+  --border-width: 5px;
   --border-radius: 1rem;
-  --border-width: 0;
-  --checkbox-background: transparent;
-  --checkbox-background-checked: transparent;
+  --checkmark-width: 4px;
+  
+  --checkmark-color: white;
+  --border-color: rgba(255, 255, 255, .8);
+  --checkbox-background: white;
+  --border-color-checked: var(--ion-color-success);
+  --checkbox-background-checked: var(--ion-color-success);
 }
 </style>

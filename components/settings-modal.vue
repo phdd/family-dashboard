@@ -26,6 +26,15 @@
         </ion-select>
       </ion-item>
     </ion-content>
+    <ion-footer>
+      <ion-toolbar>
+        <ion-buttons slot="end">
+          <ion-button @click="reload">
+            <ion-icon slot="icon-only" :icon="ioniconsReloadOutline" />
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-footer>
   </ion-modal>
 </template>
 
@@ -38,5 +47,7 @@ const modal = ref<any>(null);
 const dismiss = () => modal.value?.$el.dismiss();
 
 const { token, projects, projectId } = useTodoist();
-
+const reload = () => {
+  window.location.reload();
+};
 </script>

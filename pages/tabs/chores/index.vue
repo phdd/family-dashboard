@@ -9,7 +9,7 @@ const { collaborators, tasks } = useTodoist();
 <template>
   <ion-page>
     <ion-content>
-      <ion-grid class="h-full">
+      <ion-grid class="h-full pt-0">
         <ion-row class="h-full">
           <ion-col v-for="(collaborator, index) in collaborators" :key="index">
             <chore-list :collaborator="collaborator"
