@@ -9,7 +9,7 @@ const { members } = useFamily();
 <template>
   <ion-page>
     <ion-content>
-      <ion-grid class="h-full">
+      <ion-grid class="h-full p-4">
         <ion-row class="h-full">
           <ion-col v-for="(member, index) in members" :key="index">
             <chore-list :member="member" :color="`member-${index + 1}`" />
