@@ -10,9 +10,11 @@
       <div class="flex flex-col w-full pr-5 gap-2">
         <div class="flex justify-between font-serif text-2xl">
           <span>{{ collaborator.name }}</span>
-          <span class="text-gray-500">2/4</span>
+          <span class="text-gray-500">
+            {{ tasks.filter(task => task.isCompleted).length }}/{{ tasks.length }}
+          </span>
         </div>
-        <ion-progress-bar value="0.5" class="h-3 rounded-full" :color="color" />
+        <ion-progress-bar :value="taskDoneRatio" class="h-3 rounded-full" :color="color" />
       </div>
     </ion-list-header>
 
@@ -25,11 +27,13 @@
 <script lang="ts" setup>
 import type { Task } from '@doist/todoist-api-typescript';
 
-defineProps<{
+const props = defineProps<{
   collaborator: Collaborator;
   tasks: Task[];
   color: string;
 }>();
 
 const showInitials = ref(false);
+const taskDoneRatio = computed(() =>
+  props.tasks.filter(task => task.isCompleted).length / props.tasks.length);
 </script>

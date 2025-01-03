@@ -19,6 +19,7 @@ const fetchCompletedTasks = async (token: string, projectId: string) => {
   }
 
   const data = await response.json();
+
   return data.items.map((item: any) => ({
     id: item.id,
     content: item.content,
@@ -76,12 +77,12 @@ export const useTodoist = () => {
 
   const closeTask = async (task: Task) => {
     await api.closeTask(task.id);
-    reloadTasks();
+    await reloadTasks();
   };
 
   const reopenTask = async (task: Task) => {
     await api.reopenTask(task.id);
-    reloadTasks();
+    await reloadTasks();
   };
 
   watchEffect(async () => {
@@ -110,7 +111,6 @@ export const useTodoist = () => {
     collaborators: readonly(collaborators),
     tasks: readonly(tasks),
 
-    reloadTasks,
     closeTask,
     reopenTask,
   }
