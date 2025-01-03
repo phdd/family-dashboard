@@ -15,7 +15,7 @@
         <ion-progress-bar value="0.5" class="h-3 rounded-full" :color="color" />
       </div>
     </ion-list-header>
-    
+
     <chore-item v-for="task in tasks" :key="task.id"
       :color="color"
       :task="task" />
