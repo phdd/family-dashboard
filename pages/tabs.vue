@@ -1,10 +1,18 @@
 <script lang="ts" setup>
 const currentTime = ref("");
 
+const refreshTime = () => {
+  currentTime.value = new Date().toLocaleTimeString("de-DE", {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+};
+
 onMounted(() => {
+  refreshTime();
   setInterval(() => {
-    currentTime.value = new Date().toLocaleTimeString();
-  }, 1000);
+    refreshTime();
+  }, 10000);
 });
 </script>
 
@@ -39,8 +47,8 @@ onMounted(() => {
             <ion-label>Kalender</ion-label>
           </ion-tab-button>
 
-          <div class="flex-1 text-end">
-            <ion-button id="open-settings" fill="clear" size="large" color="secondary">
+          <div class="flex-1 text-end opacity-50">
+            <ion-button id="open-settings" fill="clear" size="large" color="dark">
               <ion-icon :icon="ioniconsSettingsOutline" />
             </ion-button>
           </div>
