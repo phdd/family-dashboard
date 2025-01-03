@@ -1,6 +1,6 @@
 <template>
   <ion-item
-    lines="none" class="m-3 rounded-xl"
+    lines="none" class="m-3 rounded-2xl"
     :style="{ 
       backgroundColor: `rgba(var(--ion-color-${color}-rgb), ${alpha})`
     }">
@@ -8,6 +8,7 @@
     <ion-checkbox :color="color" v-model="isCompleted">
       <ion-label :style="{
         opacity: isCompleted ? .6 : 1,
+        fontSize: '110%'
       }">{{ props.task.content }}</ion-label>
       <ion-note>{{ props.task.description }}</ion-note>
     </ion-checkbox>
