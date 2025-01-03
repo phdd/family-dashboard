@@ -11,13 +11,15 @@ const token = useLocalStorage("todoist-token", "");
 const projectId = useLocalStorage("todoist-project-id", "");
 
 let api = new TodoistApi(token.value);
+
 const collaborators = ref<Collaborator[]>([]);
 const projects = ref<Project[]>([]);
 const tasks = ref<Task[]>([]);
+const selectedDate = ref(new Date().toISOString().split('T')[0]);
 
 const fetchCompletedTasks = async (token: string, projectId: string) => {
   const baseUrl = "https://api.todoist.com/sync/v9/completed/get_all";
-  const since = new Date().toISOString().split('T')[0] + 'T00:00:00';
+  const since = selectedDate.value + 'T00:00:00';
 
   const response = await fetch(`${baseUrl}?project_id=${projectId}&since=${since}&annotate_items=true`, {
     headers: {
@@ -44,7 +46,7 @@ const fetchCompletedTasks = async (token: string, projectId: string) => {
 const reloadTasks = async () => {
   try {
     let t = (await api
-      .getTasks({ filter: "today" }))
+      .getTasks({ filter: selectedDate.value }))
       .filter((task) => task.projectId === projectId.value);
 
     t.sort((a, b) => a.order - b.order);
