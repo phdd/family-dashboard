@@ -1,9 +1,9 @@
 <template>
-  <ion-list :style="{ backgroundColor: `rgba(var(--ion-color-${color}-rgb), .2)` }" class="rounded-2xl h-full">
-    <ion-list-header>
-      <ion-avatar class="w-16 h-16 pt-1.5 mr-4">
-        <ion-img v-if="!showInitials" :src="collaborator.avatar" alt="collaborator Avatar" @ionError="showInitials = true" />
-        <div v-else class="flex items-center justify-center w-full h-full rounded-full text-3xl text-white" :style="{ backgroundColor: `var(--ion-color-${color})` }">
+  <ion-list :style="{ backgroundColor: `rgba(var(--ion-color-${color}-rgb), .1)` }" class="rounded-2xl h-full">
+    <ion-list-header class="pt-2">
+      <ion-avatar class="w-16 h-16 mr-3">
+        <ion-img v-if="!showInitials" class="w-16 h-16" :src="collaborator.avatar" alt="collaborator Avatar" @ionError="showInitials = true" />
+        <div v-else class="flex items-center justify-center w-16 h-16 rounded-full text-3xl text-white" :style="{ backgroundColor: `var(--ion-color-${color})` }">
           {{ collaborator.name.charAt(0) }}
         </div>
       </ion-avatar>

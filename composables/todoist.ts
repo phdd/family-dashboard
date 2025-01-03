@@ -16,7 +16,10 @@ const projects = ref<Project[]>([]);
 const tasks = ref<Task[]>([]);
 
 const fetchCompletedTasks = async (token: string, projectId: string) => {
-  const response = await fetch(`https://api.todoist.com/sync/v9/archive/items?project_id=${projectId}`, {
+  const baseUrl = "https://api.todoist.com/sync/v9/completed/get_all";
+  const since = new Date().toISOString().split('T')[0] + 'T00:00:00';
+
+  const response = await fetch(`${baseUrl}?project_id=${projectId}&since=${since}&annotate_items=true`, {
     headers: {
       Authorization: `Bearer ${token}`
     }
@@ -29,11 +32,11 @@ const fetchCompletedTasks = async (token: string, projectId: string) => {
   const data = await response.json();
 
   return data.items.map((item: any) => ({
-    id: item.id,
-    content: item.content,
-    assigneeId: item.assigned_by_uid,
-    projectId: item.project_id,
-    description: item.description,
+    id: item.item_object.id,
+    content: item.item_object.content,
+    assigneeId: item.item_object.assigned_by_uid,
+    projectId: item.item_object.project_id,
+    description: item.item_object.description,
     isCompleted: true
   }) as Task);
 }
@@ -46,10 +49,16 @@ const reloadTasks = async () => {
 
     t.sort((a, b) => a.order - b.order);
 
-    tasks.value = [
+    t = [
       ...t,
       ...await fetchCompletedTasks(token.value, projectId.value)
     ]
+
+    t = t.filter((task, index, self) =>
+      index === self.findIndex((t) => t.content === task.content)
+    );
+
+    tasks.value = t;
 
   } catch (e) {
     console.warn("Could not reload tasks", e)

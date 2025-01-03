@@ -6,7 +6,9 @@
     }">
 
     <ion-checkbox :color="color" v-model="isCompleted">
-      <ion-label>{{ props.task.content }}</ion-label>
+      <ion-label :style="{
+        opacity: isCompleted ? .6 : 1,
+      }">{{ props.task.content }}</ion-label>
       <ion-note>{{ props.task.description }}</ion-note>
     </ion-checkbox>
   </ion-item>
@@ -21,7 +23,7 @@ const props = defineProps<{
 }>();
 
 const isCompleted = ref(props.task.isCompleted);
-const alpha = computed(() => isCompleted.value ? .2 : 1);
+const alpha = computed(() => isCompleted.value ? .2 : .6);
 
 watch(isCompleted, (value) => {
   if (value) {
@@ -39,14 +41,12 @@ ion-item::part(native) {
 
 ion-checkbox {
   --size: 2rem;
-  --border-width: 5px;
-  --border-radius: 1rem;
+  --border-width: 0px;
   --checkmark-width: 4px;
   
   --checkmark-color: white;
   --border-color: rgba(255, 255, 255, .8);
-  --checkbox-background: white;
-  --border-color-checked: var(--ion-color-success);
-  --checkbox-background-checked: var(--ion-color-success);
+  --checkbox-background: transparent;
+  --checkbox-background-checked: transparent;
 }
 </style>
