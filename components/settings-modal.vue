@@ -13,12 +13,17 @@
     <ion-content class="ion-padding">
       <ion-item>
         <ion-input
-          label="Todoist-Token"
-          label-placement="stacked"
-          ref="input"
-          type="text"
-          placeholder="92bfca8..."
+        label="Todoist-Token"
+        placeholder="92bfca8..."
+        v-model="token"
         ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-select label="Aufgaben" placeholder="Projekt XY" v-model="projectId">
+          <ion-select-option v-for="project in projects" :key="project.id" :value="project.id">
+            {{ project.name }}
+          </ion-select-option>
+        </ion-select>
       </ion-item>
     </ion-content>
   </ion-modal>
@@ -29,6 +34,9 @@ defineProps({
   openModal: Boolean,
 });
 
-const modal = ref<HTMLElement | null>(null);
-const dismiss = () => modal.value.$el.dismiss();
+const modal = ref<any>(null);
+const dismiss = () => modal.value?.$el.dismiss();
+
+const { token, projects, projectId } = useTodoist();
+
 </script>
