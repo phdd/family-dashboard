@@ -75,11 +75,17 @@ const reloadCollaborators = async () => {
 };
 
 const closeTask = async (task: Task) => {
+  task.isCompleted = true;
+  tasks.value = tasks.value.map(t => t.id === task.id ? task : t);
+
   await api.closeTask(task.id);
   await reloadTasks();
 };
 
 const reopenTask = async (task: Task) => {
+  task.isCompleted = false;
+  tasks.value = tasks.value.map(t => t.id === task.id ? task : t);
+
   await api.reopenTask(task.id);
   await reloadTasks();
 };
