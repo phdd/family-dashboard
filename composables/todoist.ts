@@ -46,7 +46,7 @@ const fetchCompletedTasks = async (token: string, projectId: string) => {
 const reloadTasks = async () => {
   try {
     let t = (await api
-      .getTasks({ filter: selectedDate.value }))
+      .getTasks({ filter: `${selectedDate.value} | overdue` }))
       .filter((task) => task.projectId === projectId.value);
 
     t.sort((a, b) => a.order - b.order);
