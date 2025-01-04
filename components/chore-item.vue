@@ -5,7 +5,7 @@
       backgroundColor: `rgba(var(--ion-color-${color}-rgb), ${alpha})`
     }">
 
-    <ion-checkbox :color="color" v-model="isCompleted">
+    <ion-checkbox :color="color" v-model="isCompleted" :disabled="assigneeToken === ''">
       <ion-label :style="{
         opacity: isCompleted ? .6 : 1,
         fontSize: '110%'
@@ -16,12 +16,15 @@
 </template>
 
 <script lang="ts" setup>
-const { closeTask, reopenTask } = useTodoist();
+import { useLocalStorage } from '@vueuse/core';
 
 const props = defineProps<{
   task: Task;
   color: string;
 }>();
+
+const { closeTask, reopenTask } = useTodoist();
+const assigneeToken = useLocalStorage(`todoist-token-${props.task.assigneeId}`, '');
 
 const isCompleted = ref(props.task.isCompleted);
 const alpha = computed(() => isCompleted.value ? .2 : .6);

@@ -39,10 +39,6 @@
 </template>
 
 <script lang="ts" setup>
-defineProps({
-  openModal: Boolean,
-});
-
 const modal = ref<any>(null);
 const dismiss = () => modal.value?.$el.dismiss();
 

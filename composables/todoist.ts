@@ -89,7 +89,15 @@ const closeTask = async (task: Task) => {
   task.isCompleted = true;
   tasks.value = tasks.value.map(t => t.id === task.id ? task : t);
 
-  await api.closeTask(task.id);
+  const assigneeToken = localStorage.getItem(`todoist-token-${task.assigneeId}`);
+
+  if (assigneeToken) {
+    const assigneeApi = new TodoistApi(assigneeToken);
+    await assigneeApi.closeTask(task.id);
+  } else {
+    await api.closeTask(task.id);
+  }
+
   await reloadTasks();
 };
 

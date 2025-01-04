@@ -1,12 +1,7 @@
 <template>
   <ion-list :style="{ backgroundColor: `rgba(var(--ion-color-${color}-rgb), .1)` }" class="rounded-2xl h-full">
-    <ion-list-header class="pt-2">
-      <ion-avatar class="w-16 h-16 mr-3">
-        <ion-img v-if="!showInitials" class="w-16 h-16" :src="collaborator.avatar" alt="collaborator Avatar" @ionError="showInitials = true" />
-        <div v-else class="flex items-center justify-center w-16 h-16 rounded-full text-3xl text-white" :style="{ backgroundColor: `var(--ion-color-${color})` }">
-          {{ collaborator.name.charAt(0) }}
-        </div>
-      </ion-avatar>
+    <ion-list-header class="pt-2" @click="openCollaboratorModal">
+      <avatar :collaborator="collaborator" :color="color" />
       <div class="flex flex-col w-full pr-3 gap-2">
         <div class="flex justify-between font-serif text-2xl">
           <span>{{ collaborator.name }}</span>
@@ -27,7 +22,8 @@
 </template>
 
 <script lang="ts" setup>
-import type { Task } from '@doist/todoist-api-typescript';
+import CollaboratorModal from './collaborator-modal.vue';
+import { type Task } from '@doist/todoist-api-typescript';
 
 const props = defineProps<{
   collaborator: Collaborator;
@@ -35,9 +31,18 @@ const props = defineProps<{
   color: string;
 }>();
 
-const showInitials = ref(false);
 const taskDoneRatio = computed(() =>
   props.tasks.filter(task => task.isCompleted).length / props.tasks.length);
+
+const openCollaboratorModal = async () => {
+  (await modalController.create({
+    component: CollaboratorModal,
+    componentProps: {
+      collaborator: props.collaborator,
+      color: props.color,
+    },
+  })).present();
+};
 </script>
 
 <style scoped>
