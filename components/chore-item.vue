@@ -5,7 +5,7 @@
       backgroundColor: `rgba(var(--ion-color-${color}-rgb), ${alpha})`
     }">
 
-    <ion-checkbox :color="color" v-model="isCompleted" :disabled="assigneeToken === ''">
+    <ion-checkbox :color="color" v-model="isCompleted" :disabled="assigneeToken === '' || isCompleted">
       <ion-label :style="{
         opacity: isCompleted ? .6 : 1,
         fontSize: '110%'
