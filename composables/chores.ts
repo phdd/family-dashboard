@@ -72,6 +72,7 @@ export const useChores = (member: Member) => {
   const choresOpen = computed(() => chores.value.filter(chore => !chore.isCompleted));
 
   reloadChores();
+  setInterval(reloadChores, 300000); // reload every 5 minutes
 
   return {
     chores,
