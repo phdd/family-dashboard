@@ -5,7 +5,9 @@
       backgroundColor: `rgba(var(--ion-color-${color}-rgb), ${alpha})`
     }">
 
-    <ion-checkbox :color="color" v-model="isCompleted">
+    <ion-checkbox :color="color" v-model="isCompleted"
+      :disabled="isCompleted"><!-- difficult to handle -->
+
       <ion-label :style="{
         opacity: isCompleted ? .6 : 1,
         fontSize: '110%'
@@ -19,33 +21,21 @@
 const props = defineProps<{
   chore: Chore;
   color: string;
-  member: Member;
 }>();
 
-const { closeChore, reopenChore } = useChores(props.member);
+const emit = defineEmits<{
+  (e: 'choreClosed', chore: Chore): void;
+  (e: 'choreReopened', chore: Chore): void;
+}>();
 
 const isCompleted = ref(props.chore.isCompleted);
 const alpha = computed(() => isCompleted.value ? .2 : .6);
 
-const handleClosedChore = () => {
-  console.log('Confetti 🥳');
-};
-
 watch(isCompleted, async (value) => {
-  try {
-    if (value) {
-      await closeChore(props.chore);
-      handleClosedChore();
-    } else {
-      reopenChore(props.chore);
-    }
-  } catch (error) {
-    console.error(error);
-    (await alertController.create({
-      header: 'Ups...',
-      message: 'Ein Fehler ist aufgetreten. Bitte versuche es erneut.',
-      buttons: ['OK']
-    })).present();
+  if (value) {
+    emit('choreClosed', props.chore);
+  } else {
+    emit('choreReopened', props.chore);
   }
 });
 </script>

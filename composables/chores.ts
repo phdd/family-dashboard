@@ -68,6 +68,9 @@ export const useChores = (member: Member) => {
     }
   }
 
+  const choresClosed = computed(() => chores.value.filter(chore => chore.isCompleted));
+  const choresOpen = computed(() => chores.value.filter(chore => !chore.isCompleted));
+
   reloadChores();
 
   return {
@@ -75,5 +78,8 @@ export const useChores = (member: Member) => {
 
     closeChore,
     reopenChore,
+
+    choresClosed,
+    choresOpen
   }
 }
