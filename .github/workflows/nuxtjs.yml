@@ -60,4 +60,11 @@ jobs:
       - run: pnpm install -g surge
       - run: pnpm install
       - run: pnpm run generate
-      - run: surge ./dist/ ${{ secrets.SURGE_DOMAIN }} ${{ secrets.SURGE_TOKEN }}
+
+      - name: Deploy to foo-bar.surge.sh
+        uses: dswistowski/surge-sh-action@v1
+        with:
+          domain: ${{ secrets.SURGE_DOMAIN }}
+          project: './dist'
+          login: ${{ secrets.SURGE_LOGIN }}
+          token: ${{ secrets.SURGE_TOKEN }}
