@@ -137,7 +137,7 @@ watchEffect(() => {
   }
 });
 
-export const useTodoist = () => {
+export const useOldTodoist = () => {
   return {
     token,
     projectId,

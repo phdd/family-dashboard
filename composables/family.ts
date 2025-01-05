@@ -1,20 +1,15 @@
-export type FamilyMember = {
-  name: string;
-  avatar: string;
-}
+import { useLocalStorage } from '@vueuse/core';
 
+// jede chore list entspricht einen family member
+// jedes member brauch eigenes token 
+// jede chore-list muss separat abgefragt werden, weil die Task-IDs verschieden sind
+// todoist filter pro member zB: #Dashboard & assigned to me & (today | overdue)
 export const useFamily = () => {
-  const members = ref<FamilyMember[]>([
-    { name: 'Papa', avatar: 'https://gravatar.com/avatar/f01b51ac29bc6f06e4b6d5b45e279306?s=200' },
-    { name: 'Mama', avatar: 'https://gravatar.com/avatar/f01b51ac29bc6f06e4b6d5b45e279307?s=200' },
-    { name: 'Antonia', avatar: 'https://gravatar.com/avatar/f01b51ac29bc6f06e4b6d5b45e279308?s=200' },
-    { name: 'Nora', avatar: 'https://gravatar.com/avatar/f01b51ac29bc6f06e4b6d5b45e279309?s=200' },
-  ])
-
-  // const todoistProjectId = ref<Project | null>(null);
+  const name = useLocalStorage<string>('family/name', 'Muster');
+  const members = useLocalStorage<Member[]>('family/members', []);
 
   return {
-    members: readonly(members),
-    name: "Familie Heisig",
-  }
+    name,
+    members
+  };
 }
