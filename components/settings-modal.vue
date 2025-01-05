@@ -57,7 +57,7 @@
 const { name, members } = useFamily();
 
 const dismiss = modalController.dismiss;
-const reload = window.location.reload;
+const reload = () => window.location.reload();
 
 const addMember = async (token: string) => {
   try {
