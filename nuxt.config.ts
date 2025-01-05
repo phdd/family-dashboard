@@ -4,5 +4,8 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxtjs/ionic', '@nuxtjs/tailwindcss', 'nuxt-particles'],
   css: ['~/assets/ionic.scss', '~/assets/style.scss'],
-  ssr: false
+  ssr: false,
+  app: {
+    baseURL: process.env.NUXT_APP_BASE_URL || "/",
+  }
 })
