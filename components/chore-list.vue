@@ -36,12 +36,18 @@
 </template>
 
 <script lang="ts" setup>
+import { useSound } from '@vueuse/sound';
+import yay from '~/assets/sounds/yay.mp3';
+import yippie from '~/assets/sounds/yippie.mp3';
+
 const props = defineProps<{
   member: Member;
   color: string;
 }>();
 
 const { chores, closeChore, reopenChore, choresClosed, choresOpen } = useChores(props.member);
+const yippieSound = useSound(yippie);
+const yaySound = useSound(yay);
 
 const firstName = computed(() => props.member.fullName.split(' ')[0]);
 const showConfetti = ref(false);
@@ -67,12 +73,15 @@ const showErrorMessage = async () => {
 };
 
 const onChoreClosed = async (chore: Chore) => {
+  if (choresOpen.value.length === 1) {
+    yaySound.play();
+    congratulateMember();
+  } else {
+    yippieSound.play();
+  }
+
   try {
     await closeChore(chore);
-
-    if (choresOpen.value.length === 0) {
-      congratulateMember();
-    }
   } catch (error) {
     console.error(error);
     showErrorMessage();
