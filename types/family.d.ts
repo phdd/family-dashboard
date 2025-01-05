@@ -5,6 +5,7 @@ declare global {
         id: number;
         fullName: string;
         avatarUrl: string;
+        todoistToken: string;
     }
 
     type Member = User;
@@ -13,4 +14,17 @@ declare global {
         name: string;
         members: Member[];
     }
+
+    type Task = {
+        id: string;
+        content: string;
+        projectId: string;
+        description: string;
+        isCompleted: boolean;
+        createdAt: string;
+        order: number;
+        labels: string[];
+    }
+
+    type Chore = Task;
 }

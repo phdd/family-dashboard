@@ -5,35 +5,47 @@
       backgroundColor: `rgba(var(--ion-color-${color}-rgb), ${alpha})`
     }">
 
-    <ion-checkbox :color="color" v-model="isCompleted" :disabled="assigneeToken === '' || isCompleted">
+    <ion-checkbox :color="color" v-model="isCompleted">
       <ion-label :style="{
         opacity: isCompleted ? .6 : 1,
         fontSize: '110%'
-      }">{{ props.task.content }}</ion-label>
-      <ion-note>{{ props.task.description }}</ion-note>
+      }">{{ chore.content }}</ion-label>
+      <ion-note>{{ chore.description }}</ion-note>
     </ion-checkbox>
   </ion-item>
 </template>
 
 <script lang="ts" setup>
-import { useLocalStorage } from '@vueuse/core';
-
 const props = defineProps<{
-  task: Task;
+  chore: Chore;
   color: string;
+  member: Member;
 }>();
 
-const { closeTask, reopenTask } = useTodoist();
-const assigneeToken = useLocalStorage(`todoist-token-${props.task.assigneeId}`, '');
+const { closeChore, reopenChore } = useChores(props.member);
 
-const isCompleted = ref(props.task.isCompleted);
+const isCompleted = ref(props.chore.isCompleted);
 const alpha = computed(() => isCompleted.value ? .2 : .6);
 
-watch(isCompleted, (value) => {
-  if (value) {
-    closeTask(props.task);
-  } else {
-    reopenTask(props.task);
+const handleClosedChore = () => {
+  console.log('Confetti 🥳');
+};
+
+watch(isCompleted, async (value) => {
+  try {
+    if (value) {
+      await closeChore(props.chore);
+      handleClosedChore();
+    } else {
+      reopenChore(props.chore);
+    }
+  } catch (error) {
+    console.error(error);
+    (await alertController.create({
+      header: 'Ups...',
+      message: 'Ein Fehler ist aufgetreten. Bitte versuche es erneut.',
+      buttons: ['OK']
+    })).present();
   }
 });
 </script>

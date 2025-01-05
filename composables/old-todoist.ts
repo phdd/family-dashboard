@@ -1,11 +1,11 @@
 import { useLocalStorage } from '@vueuse/core';
 import { TodoistApi, Project, User, Task as TodoistTask } from '@doist/todoist-api-typescript'
 
-export type Collaborator = User & {
+type Collaborator = User & {
   avatar: string;
 };
 
-export type Task = Pick<TodoistTask, "assigneeId" | "content" | "id" | "projectId" | "description" | "isCompleted" | "createdAt">;
+type Task = Pick<TodoistTask, "assigneeId" | "content" | "id" | "projectId" | "description" | "isCompleted" | "createdAt">;
 
 const token = useLocalStorage("todoist-token", "");
 const projectId = useLocalStorage("todoist-project-id", "");
@@ -129,24 +129,3 @@ watchEffect(async () => {
     projects.value = []
   }
 });
-
-watchEffect(() => {
-  if (projectId.value) {
-    reloadCollaborators();
-    reloadTasks();
-  }
-});
-
-export const useOldTodoist = () => {
-  return {
-    token,
-    projectId,
-
-    projects: readonly(projects),
-    collaborators: readonly(collaborators),
-    tasks: readonly(tasks),
-
-    closeTask,
-    reopenTask,
-  }
-}

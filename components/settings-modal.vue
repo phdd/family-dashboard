@@ -30,6 +30,15 @@
             <ion-icon slot="icon-only" :icon="ioniconsRemoveOutline" />
           </ion-button>
         </ion-item>
+        <!-- <ion-list-header>
+          <ion-label>Todoist</ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-input
+            label="Filter"
+            placeholder="(today | overdue) & @dashboard"
+            v-model="filter" />
+        </ion-item> -->
       </ion-list>
     </ion-content>
     <ion-footer class="ion-no-border">
@@ -53,6 +62,7 @@ const reload = window.location.reload;
 const addMember = async (token: string) => {
   try {
     const user = await fetchTodoistUser(token);
+    user.todoistToken = token;
     members.value.push(user);
   } catch (error) {
     (await alertController.create({
