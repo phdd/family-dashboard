@@ -14,6 +14,11 @@
     "@nuxtjs/ionic": "0.15.1",
     "@vueuse/core": "^12.3.0",
     "nuxt": "^3.15.0",
+    "nuxt-particles": "^0.3.0",
+    "tsparticles": "^3.7",
+    "@tsparticles/basic": "^3.7",
+    "@tsparticles/engine": "^3.7",
+    "@tsparticles/slim": "^3.7",
     "vue": "latest",
     "vue-router": "latest"
   },

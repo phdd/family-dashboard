@@ -32,6 +32,7 @@
         @chore-reopened="onChoreReopened" />
     </transition-group>
   </ion-list>
+  <confetti v-if="showConfetti" />
 </template>
 
 <script lang="ts" setup>
@@ -43,6 +44,19 @@ const props = defineProps<{
 const { chores, closeChore, reopenChore, choresClosed, choresOpen } = useChores(props.member);
 
 const firstName = computed(() => props.member.fullName.split(' ')[0]);
+const showConfetti = ref(false);
+
+const congratulateMember = async () => {
+  showConfetti.value = true;
+
+  (await alertController.create({
+    header: `Herzlichen Glückwunsch ${firstName.value}!`,
+    message: `Du hast alle Aufgaben erledigt.`,
+    buttons: ['OK']
+  })).present();
+
+  setTimeout(() => showConfetti.value = false, 10000);
+};
 
 const showErrorMessage = async () => {
   (await alertController.create({
@@ -55,6 +69,10 @@ const showErrorMessage = async () => {
 const onChoreClosed = async (chore: Chore) => {
   try {
     await closeChore(chore);
+
+    if (choresOpen.value.length === 0) {
+      congratulateMember();
+    }
   } catch (error) {
     console.error(error);
     showErrorMessage();
