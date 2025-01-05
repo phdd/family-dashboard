@@ -3,7 +3,7 @@ useHead({
   title: 'Aufgaben',
 })
 
-// const { collaborators, tasks } = useTodoist();
+const { members } = useFamily()
 </script>
 
 <template>
@@ -11,11 +11,10 @@ useHead({
     <ion-content>
       <ion-grid class="h-full pt-0">
         <ion-row class="h-full">
-          <!-- <ion-col v-for="(collaborator, index) in collaborators" :key="index">
-            <chore-list :collaborator="collaborator"
-                        :tasks="tasks.filter(task => task.assigneeId === collaborator.id)"
-                        :color="`collaborator-${index + 1}`" />
-          </ion-col> -->
+          <ion-col v-for="(member, index) in members" :key="member.id">
+            <chore-list :member="member"
+                        :color="`member-${index + 1}`" />
+          </ion-col>
         </ion-row>
       </ion-grid>
     </ion-content>
