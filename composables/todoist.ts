@@ -5,7 +5,7 @@ export type Collaborator = User & {
   avatar: string;
 };
 
-export type Task = Pick<TodoistTask, "assigneeId" | "content" | "id" | "projectId" | "description" | "isCompleted">;
+export type Task = Pick<TodoistTask, "assigneeId" | "content" | "id" | "projectId" | "description" | "isCompleted" | "createdAt">;
 
 const token = useLocalStorage("todoist-token", "");
 const projectId = useLocalStorage("todoist-project-id", "");
@@ -93,7 +93,17 @@ const closeTask = async (task: Task) => {
 
   if (assigneeToken) {
     const assigneeApi = new TodoistApi(assigneeToken);
-    await assigneeApi.closeTask(task.id);
+
+    // task ids differ between users, so we need to find the task to close
+    // project ids differ as well => completed tasks are not fetched
+    const assigneeTasks = await assigneeApi.getTasks({ filter: `${selectedDate.value} | overdue` });
+    const taskToClose = assigneeTasks.find(t => t.createdAt === task.createdAt);
+
+    if (!taskToClose) {
+      console.error("Could not find task to close");
+    } else {
+      await assigneeApi.closeTask(taskToClose.id);
+    }
   } else {
     await api.closeTask(task.id);
   }
