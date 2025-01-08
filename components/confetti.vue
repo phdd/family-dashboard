@@ -127,7 +127,7 @@ const options: ISourceOptions = {
   },
   emitters: {
     name: "confetti",
-    startCount: 100,
+    startCount: 300,
     position: {
       x: 50, // percentage
       y: 0,
