@@ -12,9 +12,15 @@ export const useChores = (member: Member) => {
 
       const completedTasks =  (await fetchCompletedTodoistTasks(
         member.todoistToken, date.value.toISOString().split('T')[0]))
+        
+        // filter tasks that are already in incompleteTasks
+        .filter((task) => !incompleteTasks.some((t) => t.id === task.id))
 
         // filter by @dashboard label
-        .filter((task) => task.labels.includes('dashboard'));
+        .filter((task) => task.labels.includes('dashboard'))
+        
+        // deduplicate tasks
+        .filter((task, index, self) => self.findIndex(t => t.id === task.id) === index)
 
       incompleteTasks.sort((a, b) => a.order - b.order);
 
@@ -23,11 +29,6 @@ export const useChores = (member: Member) => {
         ...completedTasks
       ]
 
-      // deduplicate tasks (may have been closed/reopened multiple times)
-      .filter((task, index, self) =>
-        index === self.findIndex((t) => t.content === task.content)
-      );
-  
     } catch (e) {
       console.warn("Could not reload chores", e)
       chores.value = [];
