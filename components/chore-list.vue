@@ -46,8 +46,8 @@ const props = defineProps<{
 }>();
 
 const { chores, closeChore, reopenChore, choresClosed, choresOpen } = useChores(props.member);
-const yippieSound = useSound(yippie);
-const yaySound = useSound(yay);
+const yippieSound = useSound(yippie, { volume: .75 });
+const yaySound = useSound(yay, { volume: .75 });
 
 const firstName = computed(() => props.member.fullName.split(' ')[0]);
 const showConfetti = ref(false);
