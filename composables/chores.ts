@@ -22,6 +22,7 @@ export const useChores = (member: Member) => {
         // deduplicate tasks
         .filter((task, index, self) => self.findIndex(t => t.id === task.id) === index)
 
+      completedTasks.sort((a, b) => a.order - b.order);
       incompleteTasks.sort((a, b) => a.order - b.order);
 
       chores.value = [
