@@ -7,8 +7,10 @@ export const useChores = (member: Member) => {
 
   const reloadChores = async () => {
     try {
-      const incompleteTasks = (await api
-        .getTasks({ filter: '(today | overdue) & @dashboard & assigned to: me' }));
+      // FIXME: completed tasks are not time bound...
+      const incompleteTasks = (await api.getTasks({
+        filter: `(due before: +2 hours | (today & no time) | overdue)`
+              + ` & @dashboard & assigned to: me` }));
 
       const completedTasks =  (await fetchCompletedTodoistTasks(
         member.todoistToken, date.value.toISOString().split('T')[0]))
@@ -23,7 +25,12 @@ export const useChores = (member: Member) => {
         .filter((task, index, self) => self.findIndex(t => t.id === task.id) === index)
 
       completedTasks.sort((a, b) => a.order - b.order);
-      incompleteTasks.sort((a, b) => a.order - b.order);
+
+      incompleteTasks.sort((a, b) => {
+        if (a.due?.datetime && !b.due?.datetime) return -1;
+        if (!a.due?.datetime && b.due?.datetime) return 1;
+        return a.order - b.order;
+      });
 
       chores.value = [
         ...incompleteTasks,

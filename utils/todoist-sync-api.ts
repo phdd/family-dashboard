@@ -49,5 +49,6 @@ export const fetchCompletedTodoistTasks = async (token: string, date: string): P
     createdAt: item.item_object.added_at,
     order: item.item_object.child_order,
     labels: item.item_object.labels,
+    due: item.item_object.due,
   }) as Task);
 }

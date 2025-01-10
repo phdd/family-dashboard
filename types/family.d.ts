@@ -24,6 +24,10 @@ declare global {
         createdAt: string;
         order: number;
         labels: string[];
+        due?: {
+            datetime?: string | null;
+            string: string;
+        } | null;
     }
 
     type Chore = Task;
