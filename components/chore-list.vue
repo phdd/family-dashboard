@@ -2,7 +2,7 @@
   <ion-list :style="{ backgroundColor: `rgba(var(--ion-color-${color}-rgb), .1)` }" 
     class="rounded-2xl h-full">
 
-    <ion-list-header class="pt-2">
+    <ion-list-header class="pt-2 pb-2">
       <avatar :member="member" :color="color" />
       <div class="flex flex-col w-full pr-3 gap-2">
         <div class="flex justify-between font-serif text-2xl">
