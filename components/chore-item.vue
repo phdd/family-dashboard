@@ -11,7 +11,7 @@
       <ion-label :style="{
         opacity: isCompleted ? .6 : 1,
         fontSize: '110%'
-      }">{{ chore.content }}</ion-label>
+      }" class="ion-text-nowrap">{{ chore.content }}</ion-label>
       <ion-note>{{ chore.description }}</ion-note>
     </ion-checkbox>
   </ion-item>
