@@ -81,7 +81,7 @@ export const useChores = (member: Member) => {
   const choresOpen = computed(() => chores.value.filter(chore => !chore.isCompleted));
 
   reloadChores();
-  setInterval(reloadChores, 300000); // reload every 5 minutes
+  setInterval(() => window.location.reload(), 300000); // FIXME: reload chores every 5 minutes
 
   return {
     chores,
