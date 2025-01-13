@@ -9,7 +9,7 @@ const { members } = useFamily()
 <template>
   <ion-page>
     <ion-content>
-      <ion-grid class="h-full pt-0">
+      <ion-grid class="h-full pt-0 overflow-y-hidden">
         <ion-row class="h-full">
           <!-- FIXME: dynamic row sizing -->
           <ion-col v-for="(member, index) in members" :key="member.id" size="3">
