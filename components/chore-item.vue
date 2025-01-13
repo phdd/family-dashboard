@@ -1,6 +1,6 @@
 <template>
   <ion-item
-    lines="none" class="m-3 rounded-2xl"
+    lines="none" class="m-3 rounded-2xl py-1"
     :style="{ 
       backgroundColor: `rgba(var(--ion-color-${color}-rgb), ${alpha})`
     }">
