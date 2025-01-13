@@ -1,6 +1,6 @@
 <template>
   <ion-item
-    lines="none" class="m-3 rounded-2xl py-1"
+    lines="none" class="m-3 rounded-2xl"
     :style="{ 
       backgroundColor: `rgba(var(--ion-color-${color}-rgb), ${alpha})`
     }">
@@ -11,7 +11,7 @@
       <ion-label :style="{
         opacity: isCompleted ? .6 : 1,
         fontSize: '110%'
-      }" class="ion-text-nowrap">{{ chore.content }}</ion-label>
+      }" class="ion-text-nowrap py-1.5">{{ chore.content }}</ion-label>
       <ion-note>{{ chore.description }}</ion-note>
     </ion-checkbox>
   </ion-item>
