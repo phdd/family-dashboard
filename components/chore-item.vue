@@ -12,7 +12,7 @@
         opacity: isCompleted ? .6 : 1,
         fontSize: '110%'
       }" class="ion-text-nowrap py-1.5">{{ chore.content }}</ion-label>
-      <ion-note>{{ chore.description }}</ion-note>
+      <ion-note v-if="chore.description" class="text-slate-700">{{ chore.description }}</ion-note>
     </ion-checkbox>
   </ion-item>
 </template>
