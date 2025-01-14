@@ -25,7 +25,7 @@
     </ion-list-header>
 
     <transition-group name="list" tag="div">
-      <chore-item v-for="chore in chores" :key="chore.id"
+      <chore-item v-for="chore in chores" :key="chore.id + chore.isCompleted"
         :color="color"
         :chore="chore" 
         @chore-closed="onChoreClosed"
