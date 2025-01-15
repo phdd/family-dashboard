@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     'nuxt-particles',
     '@vite-pwa/nuxt'
   ],
+  plugins: ['~/plugins/audio.ts'],
   css: ['~/assets/ionic.scss', '~/assets/style.scss'],
   ssr: false,
   pwa: {
