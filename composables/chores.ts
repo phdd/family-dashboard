@@ -7,6 +7,8 @@ export const useChores = (member: Member) => {
 
   const reloadChores = async () => {
     try {
+      date.value = new Date();
+
       // FIXME: completed tasks are not time bound...
       const incompleteTasks = (await api.getTasks({
         filter: `(due before: +2 hours | (today & no time) | overdue)`
