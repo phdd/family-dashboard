@@ -19,6 +19,10 @@ export default defineNuxtConfig({
       short_name: 'Dasboard',
       theme_color: '#ffffff',
     },
+    workbox: {
+      navigateFallback: '/',
+      navigateFallbackAllowlist: [/^\/tabs\//],
+    },
     devOptions: {
       enabled: true,
       type: 'module',
