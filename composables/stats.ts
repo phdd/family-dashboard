@@ -6,8 +6,6 @@ export const useStats = (member: Member) => {
   const weeklyGoal = ref<number>(0);
   const currentDailyGoal = ref<number>(0);
   const currentWeeklyGoal = ref<number>(0);
-  
-  const lastChoreUpdate = useLocalStorage(`lastChoreUpdate/${member.id}`, new Date());
 
   const reloadStats = async () => {
     const stats = await fetchTodoistProductivityStats(member.todoistToken);
@@ -26,13 +24,12 @@ export const useStats = (member: Member) => {
     currentWeeklyGoal.value = currentWeekly;
   };
 
-  watch(lastChoreUpdate, reloadStats, { immediate: true });
-
   return {
     rating,
     dailyGoal,
     weeklyGoal,
     currentDailyGoal,
-    currentWeeklyGoal
+    currentWeeklyGoal,
+    reloadStats
   }
 }

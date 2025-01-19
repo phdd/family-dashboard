@@ -3,7 +3,6 @@ import { useLocalStorage } from '@vueuse/core';
 
 export const useChores = (member: Member) => {
   const api = new TodoistApi(member.todoistToken);
-  const lastChoreUpdate = useLocalStorage(`lastChoreUpdate/${member.id}`, new Date());
   const date = ref<Date>(new Date());
   const chores = ref<Chore[]>([]);
 
@@ -49,7 +48,6 @@ export const useChores = (member: Member) => {
 
   const updateChore = async (chore: Chore) => {
     chores.value = chores.value.map(t => t.id === chore.id ? chore : t);
-    lastChoreUpdate.value = new Date();
   }
 
   const closeChore = async (chore: Chore) => {

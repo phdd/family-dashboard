@@ -49,13 +49,18 @@ const props = defineProps<{
   color: string;
 }>();
 
-const { chores, closeChore, reopenChore, choresClosed, choresOpen } = useChores(props.member);
-const { rating, currentDailyGoal, dailyGoal, currentWeeklyGoal, weeklyGoal } = useStats(props.member);
+const { chores, closeChore, reopenChore, choresOpen } = useChores(props.member);
+const { rating, currentDailyGoal, dailyGoal, currentWeeklyGoal, weeklyGoal, reloadStats } = useStats(props.member);
 const yippieSound = useSound(yippie, { volume: .75 });
 const yaySound = useSound(yay, { volume: .75 });
 
 const firstName = computed(() => props.member.fullName.split(' ')[0]);
 const showConfetti = ref(false);
+
+watch(chores, () => 
+  reloadStats(),{
+  immediate: true
+});
 
 const congratulateMember = async () => {
   showConfetti.value = true;
