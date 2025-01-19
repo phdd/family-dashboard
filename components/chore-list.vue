@@ -2,28 +2,28 @@
   <ion-list :style="{ backgroundColor: `rgba(var(--ion-color-${color}-rgb), .1)` }" 
     class="rounded-2xl h-full">
 
-    <ion-list-header class="pt-2 pb-2">
+    <ion-list-header class="pt-2 pb-4">
       <avatar :member="member" :color="color" />
-      <div class="flex flex-col w-full pr-3 gap-1">
-        <div class="flex justify-between font-serif text-xl">
+      <div class="flex flex-col w-full pr-3 gap-2">
+        <div class="flex justify-between font-serif text-xl items-center">
           <span>{{ firstName }}</span>
           <span class="pr-3 -mr-3">
             <star-rating :stars="Math.round(rating * .4)" :color="color" />
           </span>
         </div>
         <div class="flex flex-row gap-2 items-center">
-          <span class="w-16">Tag</span>
+          <span class="w-20">Tag</span>
           <ion-progress-bar
             :value="currentDailyGoal / dailyGoal"
             class="h-3 rounded-full" :color="color" />
-          <span class="w-24">{{ currentDailyGoal }}&nbsp;von&nbsp;{{ dailyGoal }}</span>
+          <span class="w-28">{{ currentDailyGoal }}&nbsp;von&nbsp;{{ dailyGoal }}</span>
         </div>
         <div class="flex flex-row gap-2 items-center">
-          <span class="w-16">Woche</span>
+          <span class="w-20">Woche</span>
           <ion-progress-bar
             :value="currentWeeklyGoal / weeklyGoal"
             class="h-3 rounded-full" :color="color" />
-          <span class="w-24">{{ currentWeeklyGoal }}&nbsp;von&nbsp;{{ weeklyGoal }}</span>
+          <span class="w-28">{{ currentWeeklyGoal }}&nbsp;von&nbsp;{{ weeklyGoal }}</span>
         </div>
       </div>
     </ion-list-header>
