@@ -64,13 +64,6 @@ watch(chores, () =>
 
 const congratulateMember = async () => {
   showConfetti.value = true;
-
-  (await alertController.create({
-    header: `Herzlichen Glückwunsch ${firstName.value}!`,
-    message: `Du hast alle Aufgaben erledigt.`,
-    buttons: ['OK']
-  })).present();
-
   setTimeout(() => showConfetti.value = false, 10000);
 };
 
