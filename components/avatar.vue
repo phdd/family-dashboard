@@ -17,7 +17,7 @@ const props = defineProps<{
 const showInitials = ref(!props.member.avatarUrl);
 const size = computed(() => ({
   small: 'w-10 h-10',
-  medium: 'w-16 h-16',
+  medium: 'w-20 h-20',
   large: 'w-24 h-24',
 })[props.size ?? 'medium']);
 </script>

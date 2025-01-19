@@ -51,4 +51,80 @@ export const fetchCompletedTodoistTasks = async (token: string, date: string): P
     labels: item.item_object.labels,
     due: item.item_object.due,
   }) as Task);
-}
+};
+
+export type TodoistProductivityStats = {
+  karma_last_update: number;
+  karma_trend: 'up' | 'down' | 'same';
+  days_items: {
+    date: string; // Datum im Format "YYYY-MM-DD"
+    items: {
+      completed: number; // Anzahl abgeschlossener Tasks
+      id: string; // Projekt-ID
+    }[];
+    total_completed: number;
+  }[];
+  completed_count: number;
+  karma_update_reasons: {
+    positive_karma_reasons: number[];
+    new_karma: number;
+    negative_karma: number;
+    positive_karma: number;
+    negative_karma_reasons: number[];
+    time: string; // Zeitpunkt im Format "EEE DD MMM YYYY HH:mm:ss"
+  }[];
+  karma: number;
+  week_items: {
+    date: string; // Datum im Format "YYYY-MM-DD/YYYY-MM-DD"
+    items: {
+      completed: number; // Anzahl abgeschlossener Tasks
+      id: string; // Projekt-ID
+    }[];
+    total_completed: number;
+  }[];
+  project_colors: Record<string, string>; // Projekt-ID und Farbe
+  goals: {
+    karma_disabled: number; // 0 oder 1
+    user_id: string; // Benutzer-ID
+    max_weekly_streak: {
+      count: number; // Anzahl der Streaks
+      start: string; // Startdatum im Format "YYYY-MM-DD" (falls verfügbar)
+      end: string; // Enddatum im Format "YYYY-MM-DD" (falls verfügbar)
+    };
+    ignore_days: number[]; // Array der ignorierten Wochentage (1 = Montag, ..., 7 = Sonntag)
+    vacation_mode: number; // 0 oder 1
+    current_weekly_streak: {
+      count: number; // Anzahl der Streaks
+      start: string; // Startdatum im Format "YYYY-MM-DD" (falls verfügbar)
+      end: string; // Enddatum im Format "YYYY-MM-DD" (falls verfügbar)
+    };
+    current_daily_streak: {
+      count: number; // Anzahl der Streaks
+      start: string; // Startdatum im Format "YYYY-MM-DD" (falls verfügbar)
+      end: string; // Enddatum im Format "YYYY-MM-DD" (falls verfügbar)
+    };
+    weekly_goal: number; // Wochenziel (Anzahl Tasks)
+    max_daily_streak: {
+      count: number; // Anzahl der Streaks
+      start: string; // Startdatum im Format "YYYY-MM-DD" (falls verfügbar)
+      end: string; // Enddatum im Format "YYYY-MM-DD" (falls verfügbar)
+    };
+    daily_goal: number; // Tagesziel (Anzahl Tasks)
+  };
+};
+
+export const fetchTodoistProductivityStats = async (
+  token: string
+): Promise<TodoistProductivityStats> => {
+  const response = await fetch(`https://api.todoist.com/sync/v9/completed/get_stats`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    }
+  });
+
+  if (!response.ok) {
+    throw new Error('Failed to fetch productivity stats');
+  }
+
+  return await response.json();
+};

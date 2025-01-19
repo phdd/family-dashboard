@@ -4,23 +4,27 @@
 
     <ion-list-header class="pt-2 pb-2">
       <avatar :member="member" :color="color" />
-      <div class="flex flex-col w-full pr-3 gap-2">
-        <div class="flex justify-between font-serif text-2xl">
+      <div class="flex flex-col w-full pr-3 gap-1">
+        <div class="flex justify-between font-serif text-xl">
           <span>{{ firstName }}</span>
-          <span class="text-gray-500 pr-3">
-            <template v-if="choresOpen.length === 0">
-              alles erledigt 🎉
-            </template>
-            <template v-else-if="choresClosed.length === 0">
-              los geht's!
-            </template>
-            <template v-else>
-              {{ choresClosed.length }} von {{ chores.length }}
-            </template>
+          <span class="pr-3 -mr-3">
+            <star-rating :stars="Math.round(rating * .4)" :color="color" />
           </span>
         </div>
-        <ion-progress-bar :value="choresClosed.length / chores.length"
-          class="h-3 rounded-full" :color="color" />
+        <div class="flex flex-row gap-2 items-center">
+          <span class="w-16">Tag</span>
+          <ion-progress-bar
+            :value="currentDailyGoal / dailyGoal"
+            class="h-3 rounded-full" :color="color" />
+          <span class="w-24">{{ currentDailyGoal }}&nbsp;von&nbsp;{{ dailyGoal }}</span>
+        </div>
+        <div class="flex flex-row gap-2 items-center">
+          <span class="w-16">Woche</span>
+          <ion-progress-bar
+            :value="currentWeeklyGoal / weeklyGoal"
+            class="h-3 rounded-full" :color="color" />
+          <span class="w-24">{{ currentWeeklyGoal }}&nbsp;von&nbsp;{{ weeklyGoal }}</span>
+        </div>
       </div>
     </ion-list-header>
 
@@ -46,6 +50,7 @@ const props = defineProps<{
 }>();
 
 const { chores, closeChore, reopenChore, choresClosed, choresOpen } = useChores(props.member);
+const { rating, currentDailyGoal, dailyGoal, currentWeeklyGoal, weeklyGoal } = useStats(props.member);
 const yippieSound = useSound(yippie, { volume: .75 });
 const yaySound = useSound(yay, { volume: .75 });
 
