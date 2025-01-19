@@ -16,7 +16,7 @@ export const useStats = (member: Member) => {
     const dailyStreakBonus = 1 * (stats.goals.current_daily_streak.count);
     const weeklyStreakBonus = 2 * (stats.goals.current_weekly_streak.count);
 
-    rating.value = currentDaily + dailyStreakBonus + weeklyStreakBonus;
+    rating.value = Math.round(0.1 * currentDaily + dailyStreakBonus + weeklyStreakBonus);
 
     dailyGoal.value = stats.goals.daily_goal;
     weeklyGoal.value = stats.goals.weekly_goal;
