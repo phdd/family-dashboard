@@ -1,5 +1,3 @@
-import { useLocalStorage } from '@vueuse/core';
-
 export const useStats = (member: Member) => {
   const rating = ref<number>(0);
   const dailyGoal = ref<number>(0);

@@ -1,7 +1,27 @@
 import { TodoistApi } from '@doist/todoist-api-typescript';
-import { useLocalStorage } from '@vueuse/core';
+import { useWebSocket } from '@vueuse/core';
 
 export const useChores = (member: Member) => {
+  const websocketUrl = ref();
+
+  const reloadWebsocketUrl = async () => {
+    websocketUrl.value = await fetchTodoistWebsocketUrl(member.todoistToken);
+  };
+
+  const { data: websocketMesssage } = useWebSocket(websocketUrl, {
+    heartbeat: {
+      message: '{"type":"ping"}',
+      interval: 60000,
+    },
+    autoReconnect: {
+      retries: 3,
+      delay: 1000,
+      onFailed() {
+        reloadWebsocketUrl();
+      },
+    },
+  });
+
   const api = new TodoistApi(member.todoistToken);
   const date = ref<Date>(new Date());
   const chores = ref<Chore[]>([]);
@@ -83,8 +103,25 @@ export const useChores = (member: Member) => {
   const choresClosed = computed(() => chores.value.filter(chore => chore.isCompleted));
   const choresOpen = computed(() => chores.value.filter(chore => !chore.isCompleted));
 
-  reloadChores();
-  setInterval(reloadChores, 60000);
+  watchEffect(() => {
+    const message = JSON.parse(websocketMesssage.value);
+
+    if (message?.type === 'sync_needed') {
+      reloadChores();
+    }
+
+    websocketMesssage.value = "null";
+  });
+
+  const reload = async () => {
+    await reloadWebsocketUrl();
+    await reloadChores();
+  };
+
+  reload();
+
+  // manually reload every hour
+  setInterval(reload, 3600000);
 
   return {
     chores,

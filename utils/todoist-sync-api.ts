@@ -1,5 +1,5 @@
-export const fetchTodoistUser = async (token: string): Promise<User> => {
-  const response = await fetch(`https://api.todoist.com/sync/v9/sync`, {
+async function sync(token: string, resourceTypes: string[] = ["user"]): Promise<Response> {
+  return await fetch(`https://api.todoist.com/sync/v9/sync`, {
     method: 'POST',
     headers: {
       'Authorization': `Bearer ${token}`,
@@ -7,9 +7,15 @@ export const fetchTodoistUser = async (token: string): Promise<User> => {
     },
     body: new URLSearchParams({
       sync_token: "*",
-      resource_types: JSON.stringify(["user"]),
+      resource_types: JSON.stringify(resourceTypes)
     }),
   });
+}
+
+
+
+export const fetchTodoistUser = async (token: string): Promise<User> => {
+  const response = await sync(token);
 
   if (response.ok) {
     const data = await response.json();
@@ -18,12 +24,26 @@ export const fetchTodoistUser = async (token: string): Promise<User> => {
       return {
         id: data.user.id,
         fullName: data.user.full_name,
-        avatarUrl: data.user.avatar_big,
+        avatarUrl: data.user.avatar_big
       } as User;
     }
   }
 
   throw new Error(`Failed to fetch user`);
+};
+
+export const fetchTodoistWebsocketUrl = async (token: string): Promise<string> => {
+  const response = await sync(token);
+
+  if (response.ok) {
+    const data = await response.json();
+
+    if (data.user) {
+      return data.user.websocket_url;
+    }
+  }
+
+  throw new Error(`Failed to fetch websocket url`);
 };
 
 export const fetchCompletedTodoistTasks = async (token: string, date: string): Promise<Task[]> => {
