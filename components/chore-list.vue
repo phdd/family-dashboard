@@ -51,6 +51,7 @@ const props = defineProps<{
 
 const { chores, closeChore, reopenChore, choresOpen } = useChores(props.member);
 const { rating, currentDailyGoal, dailyGoal, currentWeeklyGoal, weeklyGoal, reloadStats } = useStats(props.member);
+const { triggerAffirmation } = useAffirmations();
 const yippieSound = useSound(yippie, { volume: .75 });
 const yaySound = useSound(yay, { volume: .75 });
 
@@ -82,6 +83,8 @@ const onChoreClosed = async (chore: Chore) => {
   } else {
     yippieSound.play();
   }
+
+  triggerAffirmation(props.member.fullName.split(' ')[0]);
 
   try {
     await closeChore(chore);
