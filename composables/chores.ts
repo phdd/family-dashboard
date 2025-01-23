@@ -33,7 +33,7 @@ export const useChores = (member: Member) => {
       // FIXME: completed tasks are not time bound...
       const incompleteTasks = (await api.getTasks({
         filter: `(due before: +2 hours | (today & no time) | overdue)`
-              + ` & @dashboard & assigned to: me` }));
+              + ` & @dashboard & !assigned to: others` }));
 
       const completedTasks =  (await fetchCompletedTodoistTasks(
         member.todoistToken, date.value.toISOString().split('T')[0]))
