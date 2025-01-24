@@ -7,7 +7,7 @@ type Affirmation = {
 
 export const useAffirmations = () => {
   const randomAffirmation = () => {
-    const randomIndex = Math.floor(Math.random() * affirmations.length);
+    const randomIndex = Math.floor(crypto.getRandomValues(new Uint32Array(1))[0] / (0xFFFFFFFF + 1) * affirmations.length);
     return affirmations[randomIndex] as Affirmation;
   };
 
