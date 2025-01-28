@@ -77,17 +77,17 @@ const showErrorMessage = async () => {
 };
 
 const onChoreClosed = async (chore: Chore) => {
+  if (choresOpen.value.length === 1) {
+    yaySound.play();
+    congratulateMember();
+  } else {
+    yippieSound.play();
+  }
+
+  triggerAffirmation(props.member.fullName.split(' ')[0]);
+
   try {
     await closeChore(chore);
-
-    if (choresOpen.value.length === 1) {
-      yaySound.play();
-      congratulateMember();
-    } else {
-      yippieSound.play();
-    }
-
-    triggerAffirmation(props.member.fullName.split(' ')[0]);
   } catch (error) {
     console.error(error);
     showErrorMessage();
