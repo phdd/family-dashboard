@@ -8,7 +8,7 @@ export const useChores = (member: Member) => {
     websocketUrl.value = await fetchTodoistWebsocketUrl(member.todoistToken);
   };
 
-  const { data: websocketMesssage } = useWebSocket(websocketUrl, {
+  const { data: websocketMesssage, status: websocketStatus } = useWebSocket(websocketUrl, {
     heartbeat: {
       message: '{"type":"ping"}',
       interval: 60000,
@@ -117,6 +117,12 @@ export const useChores = (member: Member) => {
     await reloadWebsocketUrl();
     await reloadChores();
   };
+
+  watchEffect(() => {
+    if (websocketStatus.value === 'CLOSED') {
+      reload();
+    }
+  });
 
   reload();
 
