@@ -38,6 +38,11 @@ onMounted(() => {
             <ion-icon :icon="ioniconsHomeOutline" />
             <ion-label>Übersicht</ion-label>
           </ion-tab-button>
+
+          <ion-tab-button tab="mandala" href="/tabs/mandala" layout="label-hide">
+            <ion-icon :icon="ioniconsColorPaletteOutline" />
+            <ion-label>Mandala</ion-label>
+          </ion-tab-button>
           
           <ion-tab-button tab="chores" href="/tabs/chores" layout="label-hide">
             <ion-icon :icon="ioniconsCheckboxOutline" />
