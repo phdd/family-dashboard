@@ -1,8 +1,41 @@
 <script setup lang="ts">
-import { onMounted } from 'vue'
 useHead({
   title: 'Mandala'
 })
+
+const colors = [
+  "#B85C5C", // Vibrantes dunkles Pastell-Pink
+  "#B87B5C", // Vibrantes dunkles Pastell-Pfirsich
+  "#B8B05C", // Vibrantes dunkles Pastell-Gelb
+  "#5CB85C", // Vibrantes dunkles Pastell-Minzgrün
+  "#5C8BB8", // Vibrantes dunkles Pastell-Blau
+  "#8C5CB8", // Vibrantes dunkles Pastell-Lavendel
+  "#B85CB8", // Vibrantes dunkles Pastell-Lila
+  "#B85C8C", // Vibrantes dunkles Pastell-Koralle
+  "#5CB8B8", // Vibrantes dunkles Pastell-Türkis
+  "#8CB85C", // Vibrantes dunkles Pastell-Limette
+  "#B89C5C", // Vibrantes dunkles Pastell-Orange
+  "#B87CB8", // Vibrantes dunkles Pastell-Magenta
+  "#5C9CB8", // Vibrantes dunkles Pastell-Cyan
+  "#8C7B5C", // Vibrantes dunkles Pastell-Braun
+  "#8C8C8C", // Vibrantes dunkles Pastell-Grau
+  "#5CB8A0"  // Vibrantes dunkles Pastell-Aqua
+];
+
+const selectedColor = ref('#acacff')
+const lineWidth = ref(5)
+const slices = ref(4)
+
+const resetMandala = () => {
+  const canvas = document.getElementById('canvas') as HTMLCanvasElement
+  if (!canvas) return
+  const ctx = canvas.getContext('2d')
+  if (!ctx) return
+
+  ctx.clearRect(0, 0, canvas.width, canvas.height)
+  ctx.fillStyle = '#ffffff'
+  ctx.fillRect(0, 0, canvas.width, canvas.height)
+}
 
 onMounted(() => {
   const canvas = document.getElementById('canvas') as HTMLCanvasElement
@@ -19,13 +52,7 @@ onMounted(() => {
   const center = { x: width / 2, y: height / 2 }
   const radius = (Math.min(width, height) / 2) - 10
   let prevX = 0, currX = 0, prevY = 0, currY = 0
-  let flag = false, dot_flag = false
-  let drawColor = '#acacff'
-  const drawLineWidth = 1
-  const lineColorTransparent = 'rgba(120, 120, 120, 0.3)'
-  const slices = 24
-  const _angle = 360 / slices
-  let _start = 0
+  let drawing = false, dot_flag = false
 
   const d2r = (deg: number) => deg * Math.PI / 180
 
@@ -52,39 +79,41 @@ onMounted(() => {
     return { x: xr, y: yr }
   }
 
+  // Zeichnet die Hauptlinie und ihre rotierenden Kopien
   const draw = () => {
     // Hauptlinie zeichnen
     ctx.beginPath()
     ctx.moveTo(prevX, prevY)
     ctx.lineTo(currX, currY)
-    ctx.strokeStyle = drawColor
-    ctx.lineWidth = drawLineWidth
+    ctx.strokeStyle = selectedColor.value
+    ctx.lineWidth = lineWidth.value
     ctx.stroke()
     ctx.closePath()
 
-    _start = 0
-    // Kopien zeichnen
-    for (let i = 0; i < slices - 1; i++) {
-      _start += _angle
-      const rP = rotate({ x: prevX, y: prevY }, center, _start)
-      const rC = rotate({ x: currX, y: currY }, center, _start)
-      lineStroke(rP, rC, drawLineWidth, drawColor)
+    // Berechne den Rotationswinkel anhand der aktuellen Segmente
+    const angleStep = 360 / slices.value
+    for (let i = 1; i < slices.value; i++) {
+      const angle = i * angleStep
+      const rP = rotate({ x: prevX, y: prevY }, center, angle)
+      const rC = rotate({ x: currX, y: currY }, center, angle)
+      lineStroke(rP, rC, lineWidth.value, selectedColor.value)
     }
   }
 
+  // Zeichnet einen Punkt und seine rotierenden Kopien
   const drawDot = () => {
     ctx.beginPath()
-    ctx.fillStyle = drawColor
-    ctx.fillRect(currX, currY, drawLineWidth, drawLineWidth)
+    ctx.fillStyle = selectedColor.value
+    ctx.fillRect(currX, currY, lineWidth.value, lineWidth.value)
     ctx.closePath()
 
-    _start = 0
-    for (let i = 0; i < slices - 1; i++) {
-      _start += _angle
-      const rotated = rotate({ x: currX, y: currY }, center, _start)
+    const angleStep = 360 / slices.value
+    for (let i = 1; i < slices.value; i++) {
+      const angle = i * angleStep
+      const rotated = rotate({ x: currX, y: currY }, center, angle)
       ctx.beginPath()
-      ctx.fillStyle = drawColor
-      ctx.fillRect(rotated.x, rotated.y, drawLineWidth, drawLineWidth)
+      ctx.fillStyle = selectedColor.value
+      ctx.fillRect(rotated.x, rotated.y, lineWidth.value, lineWidth.value)
       ctx.closePath()
     }
   }
@@ -96,7 +125,7 @@ onMounted(() => {
       currX = e.clientX - canvas.offsetLeft
       currY = e.clientY - canvas.offsetTop
 
-      flag = true
+      drawing = true
       dot_flag = true
       if (dot_flag) {
         drawDot()
@@ -104,9 +133,9 @@ onMounted(() => {
       }
     }
     if (res === 'up' || res === 'out') {
-      flag = false
+      drawing = false
     }
-    if (res === 'move' && flag) {
+    if (res === 'move' && drawing) {
       prevX = currX
       prevY = currY
       currX = e.clientX - canvas.offsetLeft
@@ -123,36 +152,13 @@ onMounted(() => {
   }
 
   // Event-Listener hinzufügen
-  canvas.addEventListener("mousemove", (e) => findxy('move', e), false)
   canvas.addEventListener("mousedown", (e) => findxy('down', e), false)
+  canvas.addEventListener("mousemove", (e) => findxy('move', e), false)
   canvas.addEventListener("mouseup", (e) => findxy('up', e), false)
   canvas.addEventListener("mouseout", (e) => findxy('out', e), false)
 
   init()
-});
-
-const colors = [
-  "#FFB3BA", // Pastell-Pink
-  "#FFDFBA", // Pastell-Pfirsich
-  "#FFFFBA", // Pastell-Gelb
-  "#BAFFC9", // Pastell-Mint
-  "#BAE1FF", // Pastell-Blau
-  "#CDB4DB", // Pastell-Lavendel
-  "#D5A6BD", // Pastell-Lila
-  "#FF9AA2", // Pastell-Koralle
-  "#B2EBF2", // Pastell-Türkis
-  "#CCFF90", // Pastell-Limette
-  "#FFD1A9", // Pastell-Orange
-  "#FFB2FF", // Pastell-Magenta
-  "#A2D2FF", // Pastell-Cyan
-  "#CFC3A7", // Pastell-Braun
-  "#D3D3D3", // Pastell-Grau
-  "#A0E7E5"  // Pastell-Aqua
-];
-
-
-const selectedColor = ref('#acacff');
-const slices = ref(12);
+})
 </script>
 
 <template>
@@ -165,15 +171,26 @@ const slices = ref(12);
             <canvas id="canvas" class="block w-full h-full"></canvas>
           </ion-col>
           <!-- Sidebar: Steuerung -->
-          <ion-col size="3">
+          <ion-col size="3" class="ion-padding">
             <ion-list lines="none">
               <ion-item class="pb-4">
                 <ion-grid>
                   <ion-row>
                     <ion-col size="3" v-for="color in colors" :key="color">
-                      <ion-button size="large" :style="{'--background': color, '--box-shadow': 0}" @click="selectedColor = color" elevation="0">
-                        <ion-icon slot="icon-only" :icon="ioniconsCheckmarkOutline" v-if="selectedColor === color"></ion-icon>
-                        <ion-icon slot="icon-only" v-else></ion-icon>
+                      <ion-button
+                        size="large"
+                        :style="{ '--background': color, '--box-shadow': 'none' }"
+                        @click="selectedColor = color"
+                        fill="solid">
+                        <ion-icon
+                          v-if="selectedColor === color"
+                          slot="icon-only"
+                          :icon="ioniconsCheckmarkOutline">
+                        </ion-icon>
+                        <ion-icon
+                          v-else
+                          slot="icon-only">
+                        </ion-icon>
                       </ion-button>
                     </ion-col>
                   </ion-row>
@@ -181,17 +198,17 @@ const slices = ref(12);
               </ion-item>
               <ion-item class="pb-4">
                 <ion-label>Stärke</ion-label>
-                <ion-range min="0" max="100" step="1" color="primary" value="50"></ion-range>
+                <ion-range min="1" max="20" step="1" color="primary" v-model="lineWidth"></ion-range>
               </ion-item>
               <ion-item class="pb-4">
                 <ion-label>Segmente</ion-label>
-                <ion-range min="2" max="16" step="1" value="24" @ionChange="slices = $event.detail.value">
+                <ion-range min="2" max="16" step="1" color="primary" v-model="slices">
                   <ion-icon slot="start" name="remove-circle-outline"></ion-icon>
                   <ion-icon slot="end" name="add-circle-outline"></ion-icon>
                 </ion-range>
               </ion-item>
               <ion-item>
-                <ion-button expand="block" @click="" fill="clear" size="medium" class="w-full">
+                <ion-button expand="block" @click="resetMandala" fill="clear" size="medium" class="w-full">
                   <ion-icon slot="start" :icon="ioniconsRefreshOutline"></ion-icon>
                   Neu anfangen
                 </ion-button>
