@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { useVibrate } from '@vueuse/core';
 import { onMounted } from 'vue'
 useHead({
-  title: 'Kalender'
+  title: 'Mandala'
 })
 
 onMounted(() => {
@@ -130,29 +129,76 @@ onMounted(() => {
   canvas.addEventListener("mouseout", (e) => findxy('out', e), false)
 
   init()
-})
+});
+
+const colors = [
+  "#FFB3BA", // Pastell-Pink
+  "#FFDFBA", // Pastell-Pfirsich
+  "#FFFFBA", // Pastell-Gelb
+  "#BAFFC9", // Pastell-Mint
+  "#BAE1FF", // Pastell-Blau
+  "#CDB4DB", // Pastell-Lavendel
+  "#D5A6BD", // Pastell-Lila
+  "#FF9AA2", // Pastell-Koralle
+  "#B2EBF2", // Pastell-Türkis
+  "#CCFF90", // Pastell-Limette
+  "#FFD1A9", // Pastell-Orange
+  "#FFB2FF", // Pastell-Magenta
+  "#A2D2FF", // Pastell-Cyan
+  "#CFC3A7", // Pastell-Braun
+  "#D3D3D3", // Pastell-Grau
+  "#A0E7E5"  // Pastell-Aqua
+];
+
+
+const selectedColor = ref('#acacff');
+const slices = ref(12);
 </script>
 
 <template>
   <ion-page>
-    <ion-content>
-      <canvas id="canvas" class="block w-full h-full"></canvas>
+    <ion-content class="ion-no-padding">
+      <ion-grid class="h-full">
+        <ion-row class="h-full">
+          <!-- Hauptbereich: Canvas -->
+          <ion-col size="9" class="p-0">
+            <canvas id="canvas" class="block w-full h-full"></canvas>
+          </ion-col>
+          <!-- Sidebar: Steuerung -->
+          <ion-col size="3" class="ion-padding">
+            <ion-item>
+              <ion-label>Stärke</ion-label>
+              <ion-range min="0" max="100" step="1" color="primary" value="50"></ion-range>
+            </ion-item>
+            <ion-item>
+              <ion-label>Segmente</ion-label>
+              <ion-range min="2" max="16" step="1" value="24" @ionChange="slices = $event.detail.value">
+                <ion-icon slot="start" name="remove-circle-outline"></ion-icon>
+                <ion-icon slot="end" name="add-circle-outline"></ion-icon>
+              </ion-range>
+            </ion-item>
+            <ion-item>
+              <!-- <ion-label>Farbe</ion-label> -->
+              <ion-grid>
+                <ion-row>
+                  <ion-col size="3" v-for="color in colors" :key="color">
+                    <ion-button size="large" :style="{'--background': color, '--box-shadow': 0}" @click="selectedColor = color" elevation="0">
+                      <ion-icon slot="icon-only" :icon="ioniconsCheckmarkOutline" v-if="selectedColor === color"></ion-icon>
+                      <ion-icon slot="icon-only" v-else></ion-icon>
+                    </ion-button>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-item>
+            <ion-item>
+              <ion-button expand="block" @click="" fill="clear" size="medium" class="w-full">
+                <ion-icon slot="start" :icon="ioniconsRefreshOutline"></ion-icon>
+                Neu anfangen
+              </ion-button>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
     </ion-content>
-    <ion-footer class="">
-      <ion-toolbar>
-        <ion-buttons slot="start" class="w-96 px-4">
-          <ion-range min="0" max="100" step="1" color="primary" value="50" label="Dicke">
-            <ion-icon slot="start" :icon="ioniconsRemoveCircleOutline" class="w-6 h-6" />
-            <ion-icon slot="end" :icon="ioniconsAddCircleOutline" class="w-6 h-6" />
-          </ion-range>
-        </ion-buttons>
-        <ion-buttons slot="end">
-          <ion-button>
-            <ion-icon slot="icon-only"
-              :icon="ioniconsRefreshOutline" />
-          </ion-button>
-        </ion-buttons>
-      </ion-toolbar>
-    </ion-footer>
   </ion-page>
 </template>
