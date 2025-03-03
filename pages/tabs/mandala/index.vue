@@ -165,37 +165,38 @@ const slices = ref(12);
             <canvas id="canvas" class="block w-full h-full"></canvas>
           </ion-col>
           <!-- Sidebar: Steuerung -->
-          <ion-col size="3" class="ion-padding">
-            <ion-item>
-              <ion-label>Stärke</ion-label>
-              <ion-range min="0" max="100" step="1" color="primary" value="50"></ion-range>
-            </ion-item>
-            <ion-item>
-              <ion-label>Segmente</ion-label>
-              <ion-range min="2" max="16" step="1" value="24" @ionChange="slices = $event.detail.value">
-                <ion-icon slot="start" name="remove-circle-outline"></ion-icon>
-                <ion-icon slot="end" name="add-circle-outline"></ion-icon>
-              </ion-range>
-            </ion-item>
-            <ion-item>
-              <!-- <ion-label>Farbe</ion-label> -->
-              <ion-grid>
-                <ion-row>
-                  <ion-col size="3" v-for="color in colors" :key="color">
-                    <ion-button size="large" :style="{'--background': color, '--box-shadow': 0}" @click="selectedColor = color" elevation="0">
-                      <ion-icon slot="icon-only" :icon="ioniconsCheckmarkOutline" v-if="selectedColor === color"></ion-icon>
-                      <ion-icon slot="icon-only" v-else></ion-icon>
-                    </ion-button>
-                  </ion-col>
-                </ion-row>
-              </ion-grid>
-            </ion-item>
-            <ion-item>
-              <ion-button expand="block" @click="" fill="clear" size="medium" class="w-full">
-                <ion-icon slot="start" :icon="ioniconsRefreshOutline"></ion-icon>
-                Neu anfangen
-              </ion-button>
-            </ion-item>
+          <ion-col size="3">
+            <ion-list lines="none">
+              <ion-item class="pb-4">
+                <ion-grid>
+                  <ion-row>
+                    <ion-col size="3" v-for="color in colors" :key="color">
+                      <ion-button size="large" :style="{'--background': color, '--box-shadow': 0}" @click="selectedColor = color" elevation="0">
+                        <ion-icon slot="icon-only" :icon="ioniconsCheckmarkOutline" v-if="selectedColor === color"></ion-icon>
+                        <ion-icon slot="icon-only" v-else></ion-icon>
+                      </ion-button>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-item>
+              <ion-item class="pb-4">
+                <ion-label>Stärke</ion-label>
+                <ion-range min="0" max="100" step="1" color="primary" value="50"></ion-range>
+              </ion-item>
+              <ion-item class="pb-4">
+                <ion-label>Segmente</ion-label>
+                <ion-range min="2" max="16" step="1" value="24" @ionChange="slices = $event.detail.value">
+                  <ion-icon slot="start" name="remove-circle-outline"></ion-icon>
+                  <ion-icon slot="end" name="add-circle-outline"></ion-icon>
+                </ion-range>
+              </ion-item>
+              <ion-item>
+                <ion-button expand="block" @click="" fill="clear" size="medium" class="w-full">
+                  <ion-icon slot="start" :icon="ioniconsRefreshOutline"></ion-icon>
+                  Neu anfangen
+                </ion-button>
+              </ion-item>
+            </ion-list>
           </ion-col>
         </ion-row>
       </ion-grid>

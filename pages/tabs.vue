@@ -34,10 +34,10 @@ onMounted(() => {
         <ion-router-outlet />
 
         <ion-tab-bar slot="bottom" class="bg-slate-200 flex">
-          <ion-tab-button tab="dashboard" href="/tabs/dashboard" layout="label-hide" disabled>
+          <!-- <ion-tab-button tab="dashboard" href="/tabs/dashboard" layout="label-hide" disabled>
             <ion-icon :icon="ioniconsHomeOutline" />
             <ion-label>Übersicht</ion-label>
-          </ion-tab-button>
+          </ion-tab-button> -->
 
           <ion-tab-button tab="mandala" href="/tabs/mandala" layout="label-hide">
             <ion-icon :icon="ioniconsColorPaletteOutline" />
@@ -49,10 +49,10 @@ onMounted(() => {
             <ion-label>Aufgaben</ion-label>
           </ion-tab-button>
           
-          <ion-tab-button tab="calendar" href="/tabs/calendar" layout="label-hide" disabled>
+          <!-- <ion-tab-button tab="calendar" href="/tabs/calendar" layout="label-hide" disabled>
             <ion-icon :icon="ioniconsCalendarNumberOutline" />
             <ion-label>Kalender</ion-label>
-          </ion-tab-button>
+          </ion-tab-button> -->
 
           <div class="flex-1 text-end opacity-50">
             <ion-button id="open-settings" fill="clear" size="large" color="dark">
