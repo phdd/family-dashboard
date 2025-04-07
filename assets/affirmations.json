@@ -1,223 +1,654 @@
 [
     {
-        "text": "Gib jedem Tag die Chance, der schönste deines Lebens zu werden.",
-        "source": "Mark Twain"
+        "text": "Wer seine Zukunft bauen will, muss in der Gegenwart leben.",
+        "source": "Antoine de Saint-Exupéry"
     },
     {
-        "text": "Der einzige Weg, großartige Arbeit zu leisten, ist zu lieben, was man tut.",
-        "source": "Steve Jobs"
+        "text": "Geradeaus kann man nicht sehr weit kommen.",
+        "source": "Der Kleine Prinz"
     },
     {
-        "text": "Es ist nie zu spät, das zu sein, was man hätte sein können.",
-        "source": "George Eliot"
+        "text": "Alle großen Leute waren einmal Kinder, aber nur wenige erinnern sich daran.",
+        "source": "Der Kleine Prinz"
     },
     {
-        "text": "Der größte Ruhm im Leben liegt nicht darin, nie zu fallen, sondern jedes Mal wieder aufzustehen.",
-        "source": "Nelson Mandela"
+        "text": "Der ist ein Narr, der sich an der Vergangenheit die Zähne ausbricht, denn sie ist ein Granitblock und hat sich vollendet.",
+        "source": "Antoine de Saint-Exupéry"
     },
     {
-        "text": "Das Leben ist wie Fahrradfahren. Um die Balance zu halten, musst du in Bewegung bleiben.",
-        "source": "Albert Einstein"
+        "text": "Um klar zu sehen, genügt oft ein Wechsel der Blickrichtung.",
+        "source": "Antoine de Saint-Exupéry"
     },
     {
-        "text": "Die Zukunft gehört denen, die an die Wahrhaftigkeit ihrer Träume glauben.",
+        "text": "Wenn Du ein Schiff bauen willst, dann trommle nicht Männer zusammen, um Holz zu beschaffen, Aufgaben zu vergeben und die Arbeit einzuteilen. Sondern lehre sie die Sehnsucht nach dem weiten, endlosen Meer.",
+        "source": "Antoine de Saint-Exupéry"
+    },
+    {
+        "text": "Freunde sind Gärten, in denen man sich ausruhen kann.",
+        "source": "Antoine de Saint-Exupéry"
+    },
+    {
+        "text": "Schenken ist ein Brückenschlag über den Abgrund der Einsamkeit.",
+        "source": "Antoine de Saint-Exupéry"
+    },
+    {
+        "text": "Ein Lächeln ist oft das Wesentliche. Man wird mit einem Lächeln belohnt oder belebt.",
+        "source": "Antoine de Saint-Exupéry"
+    },
+    {
+        "text": "Man sieht nur mit dem Herzen gut. Das Wesentliche ist für die Augen unsichtbar.",
+        "source": "Der Kleine Prinz"
+    },
+    {
+        "text": "Es ist viel schwerer, über sich selbst zu richten, als über andere zu urteilen. Wenn du es schaffst, selbst über dich gerecht zu werden, dann bist du ein wahrer Weiser.",
+        "source": "Der Kleine Prinz"
+    },
+    {
+        "text": "Wenn du das Glück begreifen willst, musst du es als Lohn und nicht als Ziel verstehen.",
+        "source": "Antoine de Saint-Exupéry"
+    },
+    {
+        "text": "Bei einer Kerze ist nicht das Wachs wichtig, sondern das Licht.",
+        "source": "Antoine de Saint-Exupéry"
+    },
+    {
+        "text": "Träume dir dein Leben schön und mach aus diesen Träumen eine Realität.",
+        "source": "Marie Curie"
+    },
+    {
+        "text": "Jeder Mensch hat ein Brett vor dem Kopf – es kommt nur auf die Entfernung an.",
+        "source": "Marie von Ebner-Eschenbach"
+    },
+    {
+        "text": "Sei die Heldin deines Lebens, nicht das Opfer.",
+        "source": "Nora Ephron"
+    },
+    {
+        "text": "Lass dich nicht unterkriegen, sei frech und wild und wunderbar!",
+        "source": "Astrid Lindgren"
+    },
+    {
+        "text": "Leben wird nicht gemessen an der Zahl von Atemzügen, die wir nehmen; sondern an den Momenten, die uns den Atem nehmen.",
+        "source": "Maya Angelou"
+    },
+    {
+        "text": "Mut brüllt nicht immer nur. Mut kann auch die leise Stimme am Ende des Tages sein, die sagt: Morgen versuche ich es nochmal.",
+        "source": "Mary Anne Radmacher"
+    },
+    {
+        "text": "Karriere ist etwas Herrliches, aber man kann sich nicht in einer kalten Nacht an ihr wärmen.",
+        "source": "Marilyn Monroe"
+    },
+    {
+        "text": "Die meisten Menschen geben ihre Macht auf, indem sie denken, sie hätten keine.",
+        "source": "Alice Walker"
+    },
+    {
+        "text": "Eine Frau ist wie ein Teebeutel - du kannst erst beurteilen, wie stark sie ist, wenn du sie ins Wasser wirfst.",
         "source": "Eleanor Roosevelt"
+    },
+    {
+        "text": "Gib niemals auf, für das zu kämpfen, was du tun willst. Mit etwas, wo Leidenschaft und Inspiration ist, kann man nicht falsch liegen.",
+        "source": "Ella Fitzgerald"
+    },
+    {
+        "text": "Über das Kommen mancher Leute tröstet uns nichts als die Hoffnung auf ihr Gehen.",
+        "source": "Marie von Ebner-Eschenbach"
+    },
+    {
+        "text": "Was für ein herrliches Leben hatte ich! Ich wünschte nur, ich hätte es früher bemerkt.",
+        "source": "Colette"
+    },
+    {
+        "text": "Um unersetzbar zu sein, muss man stets anders sein.",
+        "source": "Coco Chanel"
+    },
+    {
+        "text": "Wenn du etwas gesagt haben willst, frage einen Mann; wenn du etwas erledigt haben willst, frage eine Frau.",
+        "source": "Margaret Thatcher"
+    },
+    {
+        "text": "Es ist der absolute Luxus, Leidenschaft mit Leistung zu kombinieren. Und es ist der wahre Weg zum Glück.",
+        "source": "Sheryl Sandberg"
+    },
+    {
+        "text": "Glück ist Liebe, nichts anderes. Wer lieben kann, ist glücklich.",
+        "source": "Hermann Hesse"
+    },
+    {
+        "text": "Glück ist das einzige, was wir anderen geben können, ohne es selbst zu haben.",
+        "source": "Carmen Sylva"
+    },
+    {
+        "text": "Das Geheimnis des Glücks liegt nicht im Besitz, sondern im Geben. Wer andere glücklich macht, wird glücklich.",
+        "source": "André Gide"
+    },
+    {
+        "text": "Glück ist das einzige, das sich verdoppelt, wenn man es teilt.",
+        "source": "Albert Schweitzer"
+    },
+    {
+        "text": "Die höchste Form des Glücks ist ein Leben mit einem gewissen Grad an Verrücktheit.",
+        "source": "Erasmus von Rotterdam"
+    },
+    {
+        "text": "Wenn man glücklich ist, soll man nicht noch glücklicher sein wollen.",
+        "source": "Theodor Fontane"
+    },
+    {
+        "text": "Viele Menschen versäumen das kleine Glück, während sie auf das Große vergebens warten.",
+        "source": "Pearl S. Buck"
+    },
+    {
+        "text": "Glück ist kein Geschenk der Götter, sondern die Frucht innerer Einstellung.",
+        "source": "Erich Fromm"
+    },
+    {
+        "text": "Glücklich ist, wer das, was er liebt, auch wagt, mit Mut zu beschützen.",
+        "source": "Ovid"
     },
     {
         "text": "Mut steht am Anfang des Handelns, Glück am Ende.",
         "source": "Demokrit"
     },
     {
-        "text": "Wer kämpft, kann verlieren. Wer nicht kämpft, hat schon verloren.",
-        "source": "Bertolt Brecht"
-    },
-    {
-        "text": "Der Weg ist das Ziel.",
-        "source": "Konfuzius"
-    },
-    {
-        "text": "Auch eine Reise von tausend Meilen beginnt mit dem ersten Schritt.",
-        "source": "Laozi"
-    },
-    {
-        "text": "Was du heute kannst besorgen, das verschiebe nicht auf morgen.",
-        "source": "Benjamin Franklin"
-    },
-    {
-        "text": "Wer immer tut, was er schon kann, bleibt immer das, was er schon ist.",
-        "source": "Henry Ford"
-    },
-    {
-        "text": "Die einzige Grenze ist die, die du dir selbst setzt."
-    },
-    {
-        "text": "Glaube an dich selbst und alle, was du bist. Wisse, dass in dir etwas ist, das größer ist als jedes Hindernis.",
-        "source": "Christian D. Larson"
-    },
-    {
-        "text": "Das Geheimnis des Erfolges ist, den Standpunkt des anderen zu verstehen.",
-        "source": "Henry Ford"
-    },
-    {
-        "text": "Es gibt keine Grenzen. Nicht für den Gedanken, nicht für die Gefühle. Die Angst setzt die Grenzen.",
-        "source": "Ingmar Bergman"
-    },
-    {
-        "text": "Wer nicht wagt, der nicht gewinnt.",
-        "source": "Friedrich Schiller"
-    },
-    {
-        "text": "Das Glück bevorzugt den Mutigen.",
-        "source": "Virgil"
-    },
-    {
-        "text": "Erfolg ist nicht der Schlüssel zum Glück. Glück ist der Schlüssel zum Erfolg. Wenn du liebst, was du tust, wirst du erfolgreich sein.",
-        "source": "Albert Schweitzer"
-    },
-    {
-        "text": "Die einzige Möglichkeit, Menschen zu motivieren, ist die Kommunikation.",
-        "source": "Lee Iacocca"
-    },
-    {
-        "text": "Der einzige Mensch, der sich vernünftig benimmt, ist mein Schneider. Er nimmt jedes Mal neu Maß, wenn er mich trifft.",
-        "source": "George Bernard Shaw"
-    },
-    {
-        "text": "Es ist nicht wichtig, wie langsam du gehst, solange du nicht stehen bleibst.",
-        "source": "Konfuzius"
-    },
-    {
-        "text": "Der beste Weg, die Zukunft vorauszusagen, ist, sie zu gestalten.",
+        "text": "Die meisten Menschen sind so glücklich, wie sie es sich selbst vorgenommen haben.",
         "source": "Abraham Lincoln"
     },
     {
-        "text": "Die größte Gefahr im Leben ist, dass man zu vorsichtig wird.",
-        "source": "Alfred Adler"
+        "text": "Nicht die Glücklichen sind dankbar. Es sind die Dankbaren, die glücklich sind.",
+        "source": "Sir Francis Bacon"
     },
     {
-        "text": "Das Leben schrumpft oder dehnt sich proportional zum eigenen Mut.",
-        "source": "Anaïs Nin"
+        "text": "Scherben bringen Glück - aber nur dem Archäologen.",
+        "source": "Agatha Christie"
     },
     {
-        "text": "Manchmal kann das Leben überwältigend sein. In solchen Momenten hilft es, sich auf die kleinen Dinge zu konzentrieren und einfach weiterzumachen.",
-        "source": "Winnie Puuh – Ein Tag mit Freunden ist mein Lieblings-Tag"
+        "text": "Glücklich ist nicht, wer anderen so vorkommt, sondern wer sich selbst dafür hält.",
+        "source": "Seneca"
     },
     {
-        "text": "Die Fähigkeit, um Hilfe zu bitten, ist eine Stärke, nicht eine Schwäche.",
-        "source": "Winnie Puuh – Ein Tag mit Freunden ist mein Lieblings-Tag"
+        "text": "Glücklich allein ist die Seele, die liebt.",
+        "source": "Johann Wolfgang von Goethe"
     },
     {
-        "text": "Sei in dunklen Zeiten offen dafür, das Licht zu entdecken.",
-        "source": "Winnie Puuh – Ein Tag mit Freunden ist mein Lieblings-Tag"
+        "text": "Die Tiere empfinden wie der Mensch Freude und Schmerz, Glück und Unglück.",
+        "source": "Charles Darwin"
     },
     {
-        "text": "Wenn Ängste geteilt werden, können sie weniger beängstigend erscheinen.",
-        "source": "Winnie Puuh – Ein Tag mit Freunden ist mein Lieblings-Tag"
+        "text": "Ein jeder hat seine eigne Art, glücklich zu sein, und niemand darf verlangen, dass man es in der seinigen sein soll.",
+        "source": "Heinrich von Kleist"
     },
     {
-        "text": "Guten Morgen, neuer Tag. Schön, dass du da bist!",
-        "source": "Winnie Puuh – Ein Tag mit Freunden ist mein Lieblings-Tag"
+        "text": "Kummer lässt sich allein tragen. Für das Glück sind zwei Menschen erforderlich.",
+        "source": "Elbert Hubbard"
     },
     {
-        "text": "Manchmal ist es wichtig, Nein zu sagen, auch wenn es schwerfällt. Du bist mutig, wenn du auf dein Gefühl hörst.",
-        "source": "Liane Schneider: Conni geht nicht mit jedem mit"
+        "text": "Die besten Dinge im Leben sind nicht die, die man für Geld bekommt.",
+        "source": "Albert Einstein"
     },
     {
-        "text": "Auch wenn du einmal hinfällst, steh wieder auf. Mit etwas Übung bekommst du es hin!",
-        "source": "Liane Schneider: Conni lernt Rad fahren"
+        "text": "Es gibt keinen Weg zum Glück. Glücklichsein ist der Weg.",
+        "source": "Buddha"
     },
     {
-        "text": "Juchhu! Wenn du an dich glaubst, kannst du alles erreichen. Mit einer positiven Einstellung, Spaß und etwas Hilfe geht alles viel leichter.",
-        "source": "Christian Tielmann: Max lernt schwimmen"
+        "text": "Glück entsteht oft durch Aufmerksamkeit in kleinen Dingen, Unglück oft durch Vernachlässigung kleiner Dinge.",
+        "source": "Wilhelm Busch"
     },
     {
-        "text": "Wenn meine Welt zusammenfällt, brauch ich nur jemand', der mich hält. Dabei tankt man nämlich Kraft, mit der man dann was Tolles schafft",
-        "source": "Nora Imlau: Was weinst du denn so viel, kleines Krokodil"
+        "text": "Denkt immer daran, mit einem Traum und einer Maus fing alles an.",
+        "source": "Walt Disney"
     },
     {
-        "text": "Auch wenn Tränen traurig scheinen: Sie machen stark, wenn wir sie weinen. Denn Gefühle willst du fühlen und dann kannst du weiterspielen.",
-        "source": "Nora Imlau: Was weinst du denn so viel, kleines Krokodil"
+        "text": "Meine schönsten Erinnerungen stammen aus den Jahren in Marceline.",
+        "source": "Walt Disney"
     },
     {
-        "text": "Mit so einer Familie, denkt Hummelchen bei sich, lern ich bestimmt noch fliegen. Denn alle lieben mich.",
-        "source": "Nora Imlau, Judith Beier: Flieg, Hummelchen, flieg"
+        "text": "Um loszulegen, muss man aufhören zu reden und anfangen zu handeln.",
+        "source": "Walt Disney"
     },
     {
-        "text": "Spaßhaben gibt Kraft, mit der man alles schafft.",
-        "source": "Nora Imlau, Judith Beier: Flieg, Hummelchen, flieg"
+        "text": "Es macht Spaß, das Unmögliche zu tun.",
+        "source": "Walt Disney"
     },
     {
-        "text": "Wenn wir zusammenhalten, sind wir stark und überwinden die größten Hindernisse. Mit jemandem an unserer Seite sind wir mutiger und können die gruseligsten Ungeheuer bezwingen. Manchmal ist das WIR-Gefühl ganz klein, aber wenn wir uns um es kümmern, wird es wieder groß.",
-        "source": "Daniela Kunkel: Das kleine WIR"
+        "text": "Wenn du davon träumen kannst, dann kannst du es auch machen.",
+        "source": "Walt Disney"
     },
     {
-        "text": "Weißt du, was du bei schrägen Blicken und blöden Kommentaren sagen kannst? 'Ist mir total schnurzpiepegal.'",
-        "source": "Lindiwe Suttle Müller-Westernhagen: Naya"
+        "text": "Du erreichst einen Punkt, an dem du nicht mehr für Geld arbeitest.",
+        "source": "Walt Disney"
     },
     {
-        "text": "Ein kleines Missgeschick kann immer mal passieren. Macht nichts. Beim nächsten Mal klappt es bestimmt schon besser. Hurra!",
-        "source": "Axel Scheffler: Pip und Posy: Die kleine Pfütze"
+        "text": "Das wirkliche Problem unserer Welt ist, dass zu viele Menschen erwachsen werden.",
+        "source": "Walt Disney"
     },
     {
-        "text": "Wenn dir etwas Angst macht, mach die Augen weit auf und schau genau hin. Vielleicht steckt dahinter etwas Lustiges, das dich zum Lachen bringt. Hurra!",
-        "source": "Axel Scheffler: Pip und Posy: Das Gruselmonster"
+        "text": "Disneyland ist nicht nur für Kinder gedacht. Denn wann hört eine Person auf, ein Kind zu sein?",
+        "source": "Walt Disney"
     },
     {
-        "text": "Viel mehr als unsere Fähigkeiten sind es unsere Entscheidungen, die zeigen, wer wir wirklich sind.",
-        "source": "J. K. Rowling: Harry Potter und die Kammer des Schreckens"
+        "text": "Lasse dein Herz dich führen. Es flüstert, also höre ganz genau zu.",
+        "source": "Walt Disney"
     },
     {
-        "text": "Glück und Zuversicht vermag man selbst in Zeiten der Dunkelheit zu finden. Man darf bloß nicht vergessen ein Licht anzuschalten.",
-        "source": "J. K. Rowling: Harry Potter und der Gefangene von Askaban"
+        "text": "Macht weiter so, Jungs!",
+        "source": "Walt Disney"
     },
     {
-        "text": "Wenn wir träumen, betreten wir eine Welt, die ganz und gar uns gehört.",
-        "source": "J. K. Rowling: Harry Potter und der Gefangene von Askaban"
+        "text": "Das Schreiben für Kinder ist eine Kunst für sich und dazu noch eine sehr interessante.",
+        "source": "Enid Blyton"
     },
     {
-        "text": "Das Dunkle und Schwierige lässt sich nicht vermeiden. Doch so lange man sich daran erinnert, dass das Licht immer wiederkehrt, kann man die Dunkelheit überstehen.",
-        "source": "J. K. Rowling: Harry Potter und die Heiligtümer des Todes"
+        "text": "Kritik von Leuten über zwölf interessiert mich überhaupt nicht!",
+        "source": "Enid Blyton"
     },
     {
-        "text": "Wenn meine Angst zu groß wird, denke ich an einen schönen Ort.",
-        "source": "Nanna Neßhöver: Wenn ich ängstlich bin"
+        "text": "Der beste Weg, Hindernisse zu überwinden, ist, sie als Trittsteine zu verwenden. Lache über sie, betrete sie und lass dich zu etwas Besserem führen.",
+        "source": "Enid Blyton"
     },
     {
-        "text": "Wenn du Angst hast, zeige der Angst, wie stark du bist und hüpfe so hoch wie ein kleiner Steinbock oder mache dich groß wie ein Luchs.",
-        "source": "Nanna Neßhöver: Wenn ich ängstlich bin"
+        "text": "Ich bekomme täglich über hundert Briefe aus der ganzen Welt, von Kindern und Eltern. Es ist ein Wunder, dass ich jemals Zeit finde, Bücher zu schreiben!",
+        "source": "Enid Blyton"
     },
     {
-        "text": "Ich glaube an dich! Du schaffst das! Erzähle das, was dich bedrückt, einem lieben Menschen, einem Haustier oder deinem Tagebuch. Manchmal braucht man nur jemanden, der einem zuhört. Dann findet sich die Lösung wie von selbst.",
-        "source": "Margit Auer: Die Schule der magischen Tiere"
+        "text": "Verlasse etwas für jemanden, aber verlasse nie jemanden für etwas.",
+        "source": "Enid Blyton"
     },
-    {"text": "Treffen sich zwei Fische. Sagt der eine: 'Hi!'. Sagt der andere: 'Wo?'."},
-    {"text": "Vor welcher Musik haben Luftballons Angst? Popmusik."},
-    {"text": "Warum brauchen Polizisten eine Schere? Damit sie Einbrechern den Weg abschneiden können."},
-    {"text": "Warum können Skelette nicht lügen? Weil sie so leicht zu durchschauen sind."},
-    {"text": "Warum leben Haie im Salzwasser? Weil sie in Pfefferwasser niesen müssen."},
-    {"text": "Warum summen Bienen? Weil sie den Text nicht kennen."},
-    {"text": "Warum tragen Rosinen Stirnlampen? Weil sie in den Stollen gehen."},
-    {"text": "Was fliegt in der Luft herum und macht mmus mmus? Eine Biene im Rückwärtsgang!"},
-    {"text": "Was hoppelt durch den Wald und ist ganz heiß? Ein Kaminchen."},
-    {"text": "Was ist das Lieblingsgetränk von Robotern? Schraubensaft."},
-    {"text": "Was ist der Unterschied zwischen Brokkoli und Popeln? Kinder essen keinen Brokkoli."},
-    {"text": "Was ist gesund und kräftig und spielt den Beleidigten? Ein Schmollkornbrot."},
-    {"text": "Was ist grün und fliegt über die Wiese? Die Birne Maja."},
-    {"text": "Was ist grün und sitzt auf der Toilette? Das Klokodil."},
-    {"text": "Was ist grün und steht vor der Tür? Ein Klopfsalat."},
-    {"text": "Was ist grün, glücklich und hüpft von Grashalm zu Grashalm? Eine Freuschrecke."},
-    {"text": "Was ist orange und läuft den Berg hinauf? Eine Wanderine."},
-    {"text": "Was ist rot und schlecht für die Zähne? Ein Ziegelstein."},
-    {"text": "Was ist schwarz-weiß und sitzt auf der Schaukel? Ein Schwinguin."},
-    {"text": "Was liegt am Strand und ist schlecht zu verstehen? Eine Nuschel."},
-    {"text": "Was macht der Clown im Büro? Faxen!"},
-    {"text": "Was sagt der große Stift zum kleinen Stift? Wachs-mal-Stift."},
-    {"text": "Was sagt eine Wand zur anderen? 'Ich treffe dich an der Ecke!'"},
-    {"text": "Was spricht man in der Sauna? Schwitzerdeutsch!"},
-    {"text": "Wenn kleine Affen Äffchen heißen, wie heißen dann kleine Maden? Mädchen."},
-    {"text": "Wie nennt man eine Gruppe von Wölfen? Wolfgang."},
-    {"text": "Wie nennt man einen Bären, der laut 'Kugel' schreit? Kugel-schrei-bär!"},
-    {"text": "Wie nennt man einen Keks, der unter einem Baum liegt? Schattiges Plätzchen."},
-    {"text": "Wie nennt man einen Waschbären, der ins Fitnessstudio geht? Waschmaschine."},
-    {"text": "Wohin geht ein Reh mit Haarausfall? In die Reh-Haar Klinik."}
+    {
+        "text": "Ich bin nicht wirklich interessiert an Gesprächen mit Erwachsenen, obwohl ich glaube, dass praktisch jede Mutter im Königreich meinen Namen und meine Bücher kennt. Es sind ihre Kinder, die ich liebe!",
+        "source": "Enid Blyton"
+    },
+    {
+        "text": "Hass ist so viel leichter zu gewinnen als Liebe - und so viel schwieriger, ihn wieder loszuwerden.",
+        "source": "Enid Blyton"
+    },
+    {
+        "text": "Wir versuchen, vor Schwierigkeiten davon zu laufen. Doch man kann ihnen nicht entfliegen - man muss sich mit ihnen konfrontieren und bekämpfen.",
+        "source": "Enid Blyton"
+    },
+    {
+        "text": "Du hast kein Recht etwas zu behalten, um das du dich nicht kümmern kannst.",
+        "source": "Enid Blyton"
+    },
+    {
+        "text": "Menschen entwickeln ihre ganz eigenen Gesichter während sie wachsen.",
+        "source": "Enid Blyton"
+    },
+    {
+        "text": "Es gibt keinen Weg zum Glück. Glücklich-sein ist der Weg.",
+        "source": "Buddha"
+    },
+    {
+        "text": "Das Glück liegt in uns, nicht in den Dingen.",
+        "source": "Buddha"
+    },
+    {
+        "text": "Tausende von Kerzen kann man am Licht einer Kerze anzünden ohne daß ihr Licht schwächer wird. Freude nimmt nicht ab, wenn sie geteilt wird.",
+        "source": "Buddha"
+    },
+    {
+        "text": "Gut zu reisen ist besser als anzukommen.",
+        "source": "Buddha"
+    },
+    {
+        "text": "Ein süßes Wort erfrischt oft mehr als Wasser und Schatten.",
+        "source": "Buddha"
+    },
+    {
+        "text": "Alle Menschen sind eins. Was sie unterscheidet, ist der Name, den man ihnen gibt.",
+        "source": "Buddha"
+    },
+    {
+        "text": "Wir sind, was wir denken. Alles, was wir sind, entsteht aus unseren Gedanken. Mit unseren Gedanken formen wir die Welt.",
+        "source": "Buddha"
+    },
+    {
+        "text": "Verweile nicht in der Vergangenheit, träume nicht von der Zukunft. Konzentriere dich auf den gegenwärtigen Moment.",
+        "source": "Buddha"
+    },
+    {
+        "text": "Es nützt nichts, nur ein guter Mensch zu sein, wenn man nichts tut!",
+        "source": "Buddha"
+    },
+    {
+        "text": "Du wirst morgen sein, was Du heute denkst.",
+        "source": "Buddha"
+    },
+    {
+        "text": "Wer seinen Wohlstand vermehren möchte, der sollte sich an den Bienen ein Beispiel nehmen. Sie sammeln den Honig, ohne die Blumen zu zerstören. Sie sind sogar nützlich für die Blumen. Sammle deinen Reichtum, ohne seine Quellen zu zerstören, dann wird er beständig zunehmen.",
+        "source": "Buddha"
+    },
+    {
+        "text": "Wo jeder lärmend sich einmengt, wird man niemals zur Vernunft kommen.",
+        "source": "Buddha"
+    },
+    {
+        "text": "Der Weg liegt nicht im Himmel. Der Weg liegt im Herzen.",
+        "source": "Buddha"
+    },
+    {
+        "text": "Es verlangt sehr viel Tapferkeit, sich seinen Feinden in den Weg zu stellen, aber wesentlich mehr noch, sich seinen Freunden in den Weg zu stellen.",
+        "source": "Albus Dumbledore in 'Harry Potter und der Stein der Weisen'"
+    },
+    {
+        "text": "Es ist der Wert der Überzeugungen, der den Erfolg ausmacht. Nicht die Anzahl der Anhänger.",
+        "source": "Remus Lupin in 'Harry Potter und die Heiligtümer des Todes'"
+    },
+    {
+        "text": "Es sind nicht unsere Fähigkeiten, die zeigen wer wir sind, sondern unsere Entscheidungen.",
+        "source": "Albus Dumbledore in 'Harry Potter und die Kammer des Schreckens'"
+    },
+    {
+        "text": "Wenn du wissen willst, wie ein Mensch ist, dann sieh dir genau an wie er seine Untergebenen behandelt, nicht die Gleichrangigen.",
+        "source": "Sirius Black in 'Harry Potter und der Feuerkelch'"
+    },
+    {
+        "text": "Es gibt kein gut und böse. Es gibt nur Macht, und jene, die zu schwach sind um danach zu streben.",
+        "source": "Quirinus Quirrell in 'Harry Potter und der Stein der Weisen'"
+    },
+    {
+        "text": "Glück und Zuversicht vermag man selbst in Zeiten der Dunkelheit zu finden. Man darf bloß nicht vergessen ein Licht leuchten zu lassen.",
+        "source": "Albus Dumbledore in 'Harry Potter und der Gefangene von Askaban'"
+    },
+    {
+        "text": "Die Stimme eines Kindes, egal wie ehrlich oder aufrichtig, ist bedeutungslos für jene, die verlernt haben zuzuhören.",
+        "source": "Albus Dumbledore in 'Harry Potter und der Gefangene von Askaban'"
+    },
+    {
+        "text": "Angst vor einem Namen macht nur noch größere Angst vor der Sache selbst.",
+        "source": "Hermine Granger in 'Harry Potter und der Stein der Weisen'"
+    },
+    {
+        "text": "Harry, bedaure nicht die Toten. Bedaure die Lebenden, und besonders diejenigen, die ohne Liebe leben.",
+        "source": "Albus Dumbledore in 'Harry Potter und die Heiligtümer des Todes'"
+    },
+    {
+        "text": "Du bist der, der schwach ist. Du wirst nie wissen, was Liebe ist. Oder Freundschaft. Und deswegen kannst du mir nur Leid tun!",
+        "source": "Harry Potter in 'Harry Potter und der Orden des Phönix'"
+    },
+    {
+        "text": "Wir sind nur so stark, wie wir vereint sind und so schwach, wie wir getrennt sind.",
+        "source": "Albus Dumbledore in 'Harry Potter und der Feuerkelch'"
+    },
+    {
+        "text": "Wenn wir träumen betreten wir eine Welt, die ganz und gar uns gehört.",
+        "source": "Albus Dumbledore in 'Harry Potter und der Gefangene von Askaban'"
+    },
+    {
+        "text": "Wir leben nicht, um zu glauben, sondern um zu lernen.",
+        "source": "Tenzin Gyatso, 14. Dalai Lama"
+    },
+    {
+        "text": "Es gibt nur zwei Tage im Jahr, an denen man nichts tun kann. Der eine ist Gestern, der andere Morgen. Dies bedeutet, dass heute der richtige Tag zum Lieben, Glauben und in erster Linie zum Leben ist.",
+        "source": "Tenzin Gyatso, 14. Dalai Lama"
+    },
+    {
+        "text": "Unsere wahre Aufgabe ist es, glücklich zu sein.",
+        "source": "Tenzin Gyatso, 14. Dalai Lama"
+    },
+    {
+        "text": "Besuche einmal im Jahr einen Ort, den du noch nicht kennst.",
+        "source": "Tenzin Gyatso, 14. Dalai Lama"
+    },
+    {
+        "text": "Lebe ein gutes, ehrbares Leben! Wenn du älter bist und zurückdenkst, wirst du es noch einmal genießen können.",
+        "source": "Tenzin Gyatso, 14. Dalai Lama"
+    },
+    {
+        "text": "Öffne der Veränderung deine Arme, aber verliere dabei deine Werte nicht aus den Augen.",
+        "source": "Tenzin Gyatso, 14. Dalai Lama"
+    },
+    {
+        "text": "Wenn du verlierst, verliere nie die Lektion!",
+        "source": "Tenzin Gyatso, 14. Dalai Lama"
+    },
+    {
+        "text": "Der eigentliche Sinn unseres Lebens besteht im Streben nach Glück.",
+        "source": "Tenzin Gyatso, 14. Dalai Lama"
+    },
+    {
+        "text": "Die Liebe und das Mitgefühl sind die Grundlagen für den Weltfrieden - auf allen Ebenen.",
+        "source": "Tenzin Gyatso, 14. Dalai Lama"
+    },
+    {
+        "text": "Mitgefühl und Liebe sind keine bloßen Luxusgüter. Als die Quelle von innerem und äußerem Frieden, sind sie grundlegend für das Überleben unserer Spezies.",
+        "source": "Tenzin Gyatso, 14. Dalai Lama"
+    },
+    {
+        "text": "Wer alles mit einem Lächeln beginnt, dem wird das meiste gelingen.",
+        "source": "Tenzin Gyatso, 14. Dalai Lama"
+    },
+    {
+        "text": "Freude ist eine Fähigkeit, in der wir uns üben sollten.",
+        "source": "Tenzin Gyatso, 14. Dalai Lama"
+    },
+    {
+        "text": "In der Wut verliert der Mensch seine Intelligenz.",
+        "source": "Tenzin Gyatso, 14. Dalai Lama"
+    },
+    {
+        "text": "Versuchen wir, das Beste eines jeden Menschen zu erkennen, den anderen im bestmöglichen Licht zu sehen. Diese Einstellung erzeugt sofort ein Gefühl der Nähe, eine Art Geneigtheit, eine Verbindung.",
+        "source": "Tenzin Gyatso, 14. Dalai Lama"
+    },
+    {
+        "text": "Wenn Menschen lachen, sind sie fähig zu denken.",
+        "source": "Tenzin Gyatso, 14. Dalai Lama"
+    },
+    {
+        "text": "Verbringe jeden Tag einige Zeit mit dir selbst.",
+        "source": "Tenzin Gyatso, 14. Dalai Lama"
+    },
+    {
+        "text": "Mensch: das einzige Lebewesen, das erröten kann. Es ist aber auch das einzige was Grund dazu hat.",
+        "source": "Mark Twain"
+    },
+    {
+        "text": "Menschen mit einer neuen Idee gelten solange als Spinner, bis sich die Sache durchgesetzt hat.",
+        "source": "Mark Twain"
+    },
+    {
+        "text": "Kein Mensch kann sich wohl fühlen, wenn er sich nicht selbst akzeptiert.",
+        "source": "Mark Twain"
+    },
+    {
+        "text": "Jeder ist ein Mond und hat eine dunkle Seite, die er niemanden zeigt.",
+        "source": "Mark Twain"
+    },
+    {
+        "text": "Wir schätzen die Menschen, die frisch und offen ihre Meinung sagen - vorausgesetzt, sie meinen dasselbe wie wir.",
+        "source": "Mark Twain"
+    },
+    {
+        "text": "Enttäuscht vom Affen, schuf Gott den Menschen. Danach verzichtete er auf weitere Experimente.",
+        "source": "Mark Twain"
+    },
+    {
+        "text": "Gib jedem Tag die Chance, der schönste deines Lebens zu werden.",
+        "source": "Mark Twain"
+    },
+    {
+        "text": "Wenn wir bedenken, dass wir alle verrückt sind, ist das Leben erklärt.",
+        "source": "Mark Twain"
+    },
+    {
+        "text": "Wer nicht weiß, wohin er will, der darf sich nicht wundern, wenn er ganz woanders ankommt.",
+        "source": "Mark Twain"
+    },
+    {
+        "text": "Freundlichkeit ist eine Sprache, die Taube hören und Blinde lesen können.",
+        "source": "Mark Twain"
+    },
+    {
+        "text": "Das Schönste, was wir erleben können, ist das Geheimnisvolle.",
+        "source": "Albert Einstein"
+    },
+    {
+        "text": "Phantasie ist wichtiger als Wissen, denn Wissen ist begrenzt.",
+        "source": "Albert Einstein"
+    },
+    {
+        "text": "Lernen ist Erfahrung. Alles andere ist einfach nur Information.",
+        "source": "Albert Einstein"
+    },
+    {
+        "text": "Die besten Dinge im Leben sind nicht die, die man für Geld bekommt.",
+        "source": "Albert Einstein"
+    },
+    {
+        "text": "Es gibt zwei Arten, sein Leben zu leben: entweder so, als wäre nichts ein Wunder, oder so, als wäre alles ein Wunder.",
+        "source": "Albert Einstein"
+    },
+    {
+        "text": "Probleme kann man niemals mit derselben Denkweise lösen, durch die sie entstanden sind.",
+        "source": "Albert Einstein"
+    },
+    {
+        "text": "Mach' dir keine Sorgen über deine Schwierigkeiten mit der Mathematik. Ich kann dir versichern, dass meine noch größer sind.",
+        "source": "Albert Einstein"
+    },
+    {
+        "text": "Wer es in kleinen Dingen mit der Wahrheit nicht ernst nimmt, dem kann man auch in großen Dingen nicht vertrauen.",
+        "source": "Albert Einstein"
+    },
+    {
+        "text": "Die Welt wird nicht bedroht von den Menschen, die böse sind, sondern von denen, die das Böse zulassen.",
+        "source": "Albert Einstein"
+    },
+    {
+        "text": "Wenn die Menschen nur über das sprächen, was sie begreifen, dann würde es sehr still auf der Welt sein.",
+        "source": "Albert Einstein"
+    },
+    {
+        "text": "Der gesunde Menschenverstand ist nur eine Anhäufung von Vorurteilen, die man bis zum 18. Lebensjahr erworben hat.",
+        "source": "Albert Einstein"
+    },
+    {
+        "text": "Es gibt keine großen Entdeckungen und Fortschritte, solange es noch ein unglückliches Kind auf Erden gibt.",
+        "source": "Albert Einstein"
+    },
+    {
+        "text": "Holzhacken ist deshalb so beliebt, weil man bei dieser Tätigkeit den Erfolg sofort sieht.",
+        "source": "Albert Einstein"
+    },
+    {
+        "text": "Man kann in Kinder nichts hineinprügeln, aber vieles herausstreicheln.",
+        "source": "Astrid Lindgren"
+    },
+    {
+        "text": "Liebe kann man lernen. Und niemand lernt besser als Kinder. Wenn Kinder ohne Liebe aufwachsen, darf man sich nicht wundern, wenn sie selber lieblos werden.",
+        "source": "Astrid Lindgren"
+    },
+    {
+        "text": "Ich glaube, dass Erziehung Liebe zum Ziel haben muss.",
+        "source": "Astrid Lindgren"
+    },
+    {
+        "text": "Es gibt kein Alter, in dem alles so irrsinnig intensiv erlebt wird wie in der Kindheit. Wir Großen sollten uns daran erinnern, wie das war.",
+        "source": "Astrid Lindgren"
+    },
+    {
+        "text": "Alle Menschen sollten ihre Kindheit von Anfang bis Ende mit sich tragen.",
+        "source": "Astrid Lindgren"
+    },
+    {
+        "text": "Das Wichtigste ist, dass Kinder Bücher lesen, dass ein Kind mit seinem Buch allein sein kann. Dagegen sind Film, Fernsehen und Video eine oberflächliche Erscheinung.",
+        "source": "Astrid Lindgren"
+    },
+    {
+        "text": "Lesen ist ein grenzenloses Abenteuer der Kindheit.",
+        "source": "Astrid Lindgren"
+    },
+    {
+        "text": "Freiheit bedeutet, dass man nicht unbedingt alles so machen muss wie andere Menschen.",
+        "source": "Astrid Lindgren"
+    },
+    {
+        "text": "Und dann muss man ja auch noch Zeit haben, einfach da zu sitzen und vor sich hin zu schauen.",
+        "source": "Astrid Lindgren"
+    },
+    {
+        "text": "Alles, was an Großem in der Welt geschah, vollzog sich zuerst in der Phantasie des Menschen.",
+        "source": "Astrid Lindgren"
+    },
+    {
+        "text": "Es ist gefährlich, zu lange zu schweigen. Die Zunge verwelkt, wenn man sie nicht gebraucht.",
+        "source": "Astrid Lindgren"
+    },
+    {
+        "text": "Wie schön muss es erst im Himmel sein, wenn er von außen schon so schön aussieht!",
+        "source": "Astrid Lindgren"
+    },
+    {
+        "text": "Wie gut, sagte der kleine Tiger, wenn man einen Freund hat, der ein Floß bauen kann. Dann braucht man sich vor nichts zu fürchten.",
+        "source": "Janosch – Oh, wie schön ist Panama"
+    },
+    {
+        "text": "Einmal trafen sie eine Krähe. 'Vögel sind nicht dumm', sagte der kleine Bär und er fragte die Krähe nach dem Weg. 'Welchen Weg?', fragte die Krähe. 'Es gibt hundert und tausend Wege.'",
+        "source": "Janosch – Oh, wie schön ist Panama"
+    },
+    {
+        "text": "O Bär, sagte der Tiger, ist das Leben nicht unheimlich schön, sag! 'Ja', sagte der kleine Bär, 'ganz unheimlich und schön.'",
+        "source": "Janosch – Post für den Tiger"
+    },
+    {
+        "text": "Sollen wir dir mal sagen, was das größte Glück der Erde ist? 'Das weiß ich allein', sagte der Löwe mit der blauen Hose. 'Nämlich Kraft und Mut. Soll ich mal mutig brüllen, ja?'",
+        "source": "Janosch – Komm, wir finden einen Schatz"
+    },
+    {
+        "text": "Was ist, Tiger, bist du krank? fragte der kleine Bär. 'Oh ja, ich bin so krank', rief der kleine Tiger, 'ich kann fast nichts mehr bewegen.' 'Halb so schlimm', sagte der kleine Bär, 'ich mach dich gesund.'",
+        "source": "Janosch – Ich mach dich gesund, sagte der Bär"
+    },
+    {
+        "text": "Ihr müsst, sagte der Hase, schnell und schweigsam sein. Dürft die Briefe nicht lesen und das, was darin steht, niemandem erzählen. Alles klar? 'Alles klar', riefen die Hasen mit den schnellen Schuhen und alles war klar.",
+        "source": "Janosch – Post für den Tiger"
+    },
+    {
+        "text": "Jawohl, sagte der kleine Bär, ich bin stark wie ein Bär und du bist stark wie ein Tiger. Das reicht.",
+        "source": "Janosch – Oh, wie schön ist Panama"
+    },
+    {
+        "text": "Warum gehst du denn so krumm, Tiger?, fragt der kleine Bär. 'Weil ich so unglücklich bin', sagte der kleine Tiger. 'Weil wir keinen Schatz gefunden haben.' 'Dann steig auf', sagte der kleine Bär, 'ich trag dich ein Stückel.'",
+        "source": "Janosch – Komm, wir finden einen Schatz"
+    },
+    {
+        "text": "Ferkel: 'Wie buchstabiert man Liebe, Pu?' – Pu: 'Man buchstabiert sie nicht… Man fühlt sie.'",
+        "source": "Pu der Bär"
+    },
+    {
+        "text": "Manchmal sind es die kleinsten Dinge, welche den meisten Platz in deinem Herzen einnehmen.",
+        "source": "Pu der Bär"
+    },
+    {
+        "text": "Versprich mir, dass du mich nie vergessen wirst, denn wenn ich das denke, werde ich nie gehen.",
+        "source": "Pu der Bär zu Christopher Robin"
+    },
+    {
+        "text": "Du kannst nicht immer in der Ecke des Waldes bleiben und darauf warten, dass andere zu dir kommen. Du musst auch manchmal zu ihnen gehen.",
+        "source": "Pu der Bär"
+    },
+    {
+        "text": "Die Dinge, die mich anders machen, sind die Dinge, die mich aus machen.",
+        "source": "I-A"
+    },
+    {
+        "text": "Flüsse wissen, es gibt keine Eile. Wir werden eines Tages dort sein.",
+        "source": "Pu der Bär"
+    },
+    {
+        "text": "Ein Tag ohne einen Freund ist wie ein Topf, ohne einen einzigen Tropfen Honig darin.",
+        "source": "Pu der Bär"
+    },
+    {
+        "text": "Ein Tag mit Dir ist mein Lieblings Tag. Also ist heute mein neuer Lieblings Tag.",
+        "source": "Pu der Bär"
+    },
+    {
+        "text": "Ich denke, wir sollten schlafen, um nicht so lange auseinander zu sein. Denn wenn wir jeweils in den Träumen des anderen sind, können wir die ganze Zeit zusammen sein.",
+        "source": "Pu der Bär"
+    },
+    {
+        "text": "Als ich dich sah, wusste ich, dass es ein Abenteuer geben würde.",
+        "source": "Pu der Bär zu Kaninchen"
+    }
 ]
