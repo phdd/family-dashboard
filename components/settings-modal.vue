@@ -47,6 +47,12 @@
           <ion-button @click="reload">
             <ion-icon slot="icon-only" :icon="ioniconsReloadOutline" />
           </ion-button>
+          <ion-button @click="exportLocalStorage">
+            <ion-icon slot="icon-only" :icon="ioniconsCloudDownloadOutline" />
+          </ion-button>
+          <ion-button @click="importLocalStorage">
+            <ion-icon slot="icon-only" :icon="ioniconsCloudUploadOutline" />
+          </ion-button>
         </ion-buttons>
       </ion-toolbar>
     </ion-footer> 
@@ -89,5 +95,37 @@ const askForToken = async () => {
           addMember(token) },
     ],
   })).present();
+};
+
+const exportLocalStorage = () => {
+  const data = JSON.stringify(localStorage);
+  const blob = new Blob([data], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'family-dashboard.json';
+  a.click();
+  URL.revokeObjectURL(url);
+};
+
+const importLocalStorage = async () => {
+  const input = document.createElement('input');
+  input.type = 'file';
+  input.accept = 'application/json';
+  input.onchange = async (event) => {
+    const file = (event.target as HTMLInputElement).files?.[0];
+    
+    if (file) {
+      const text = await file.text();
+      const data = JSON.parse(text);
+      
+      for (const key in data) {
+        localStorage.setItem(key, data[key]);
+      }
+
+      window.location.reload();
+    }
+  };
+  input.click();
 };
 </script>
