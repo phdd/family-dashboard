@@ -8,7 +8,7 @@
         <div class="flex justify-between font-serif text-xl items-center">
           <span>{{ firstName }}</span>
           <span class="pr-3 -mr-3">
-            <star-rating :stars="Math.round(rating * .4)" :color="color" />
+            <star-rating :stars="Math.min(rating, 7)" :color="color" />
           </span>
         </div>
         <div class="flex flex-row gap-2 items-center">
