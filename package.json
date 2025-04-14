@@ -22,6 +22,7 @@
     "nuxt-particles": "^0.3.0",
     "surge": "^0.24.6",
     "tsparticles": "^3.7",
+    "uuid": "^11.1.0",
     "vue": "latest",
     "vue-router": "latest"
   },

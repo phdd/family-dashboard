@@ -1,4 +1,5 @@
 import { TodoistApi } from '@doist/todoist-api-typescript';
+import { closeTodoistTask } from '@/utils/todoist-sync-api';
 import { useWebSocket } from '@vueuse/core';
 
 export const useChores = (member: Member) => {
@@ -75,7 +76,7 @@ export const useChores = (member: Member) => {
     updateChore(chore);
   
     try {
-      await api.closeTask(chore.id);
+      await closeTodoistTask(member.todoistToken, chore.id);
     } catch (e) {
       chore.isCompleted = false;
       updateChore(chore);

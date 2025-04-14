@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from 'uuid';
+
 async function sync(token: string, resourceTypes: string[] = ["user"]): Promise<Response> {
   return await fetch(`https://api.todoist.com/sync/v9/sync`, {
     method: 'POST',
@@ -12,7 +14,30 @@ async function sync(token: string, resourceTypes: string[] = ["user"]): Promise<
   });
 }
 
+export const closeTodoistTask = async (token: string, taskId: string): Promise<void> => {
+  const command = [
+    {
+      type: "item_close",
+      uuid: uuidv4(),
+      args: { id: taskId }
+    }
+  ];
 
+  const response = await fetch(`https://api.todoist.com/sync/v9/sync`, {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    body: new URLSearchParams({
+      commands: JSON.stringify(command)
+    }),
+  });
+
+  if (!response.ok) {
+    throw new Error('Failed to close the task');
+  }
+};
 
 export const fetchTodoistUser = async (token: string): Promise<User> => {
   const response = await sync(token);
