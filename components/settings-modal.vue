@@ -53,6 +53,9 @@
           <ion-button @click="importLocalStorage">
             <ion-icon slot="icon-only" :icon="ioniconsCloudUploadOutline" />
           </ion-button>
+          <ion-button @click="goFullscreen">
+            <ion-icon slot="icon-only" :icon="ioniconsExpandOutline" />
+          </ion-button>
         </ion-buttons>
       </ion-toolbar>
     </ion-footer> 
@@ -127,5 +130,16 @@ const importLocalStorage = async () => {
     }
   };
   input.click();
+};
+
+const goFullscreen = () => {
+  const el = document.documentElement;
+  if (el.requestFullscreen) {
+    el.requestFullscreen();
+  } else if ((el as any).webkitRequestFullscreen) {
+    (el as any).webkitRequestFullscreen();
+  } else if ((el as any).msRequestFullscreen) {
+    (el as any).msRequestFullscreen();
+  }
 };
 </script>
